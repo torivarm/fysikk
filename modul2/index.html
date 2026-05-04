@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modul 2: Energi – FysikkLab</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/modules.css">
+</head>
+<body>
+
+<header>
+  <div class="hdr-top">
+    <a href="../" class="back-link">← Hjem</a>
+    <div class="hdr-title">Modul 2 · Energi</div>
+    <div class="hdr-pts">⭐ <span id="pts">0</span></div>
+  </div>
+  <div class="step-nav">
+    <button class="step-btn active" onclick="scrollTo('teori')">1 · Teori</button>
+    <button class="step-btn" onclick="scrollTo('simulering')">2 · Simulering</button>
+    <button class="step-btn" onclick="scrollTo('utforsk')">3 · Utforsk</button>
+    <button class="step-btn" onclick="scrollTo('quiz')">4 · Quiz</button>
+  </div>
+</header>
+
+<div class="page">
+
+  <!-- ============================================================ -->
+  <!-- TEORI                                                        -->
+  <!-- ============================================================ -->
+  <section class="section" id="teori">
+    <div class="section-tag tag-blue">📖 Teori</div>
+    <h2>Hva er energi?</h2>
+    <p class="lead">
+      Energi er evnen til å gjøre arbeid. Alt som beveger seg, varmes opp, lyser eller lager lyd
+      bruker energi. Energi kan ikke skapes eller ødelegges — den endrer bare form!
+    </p>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>🏔️ Potensiell energi</h3>
+        <p>
+          Et objekt som er <strong>høyt oppe</strong> har potensiell (lagringsbar) energi fordi
+          tyngdekraften kan trekke det ned. Jo høyere oppe og jo tyngre, desto mer potensiell energi.
+          En stein på toppen av et fjell har mye potensiell energi.
+        </p>
+      </div>
+      <div class="card">
+        <h3>🏃 Kinetisk energi</h3>
+        <p>
+          Et objekt som <strong>er i bevegelse</strong> har kinetisk energi. Jo raskere det går
+          og jo tyngre det er, desto mer kinetisk energi. En raskt rullende bowlingkule
+          har mye kinetisk energi — det er derfor den velter kjeglene!
+        </p>
+      </div>
+    </div>
+
+    <div class="law-card">
+      <div class="law-number">Potensiell energi</div>
+      <h3>Ep = m × g × h</h3>
+      <p>Energien et objekt har på grunn av høyden sin over bakken.</p>
+      <div class="formula-box" style="margin:1rem 0 0">
+        <div class="formula" style="font-size:clamp(1.4rem,4vw,2.2rem)">Eₚ = m · g · h</div>
+        <div class="formula-explain">
+          <div class="fe-item"><span>m</span> = masse (kg)</div>
+          <div class="fe-item"><span>g</span> = tyngdeakselerasjon (10 m/s²)</div>
+          <div class="fe-item"><span>h</span> = høyde (m)</div>
+          <div class="fe-item"><span>Eₚ</span> = Joule (J)</div>
+        </div>
+      </div>
+      <div class="law-example">
+        🪨 En stein på 5 kg som ligger 10 m over bakken: Eₚ = 5 × 10 × 10 = <strong>500 J</strong>
+      </div>
+    </div>
+
+    <div class="law-card">
+      <div class="law-number">Kinetisk energi</div>
+      <h3>Ek = ½ × m × v²</h3>
+      <p>Energien et objekt har på grunn av bevegelsen sin.</p>
+      <div class="formula-box" style="margin:1rem 0 0">
+        <div class="formula" style="font-size:clamp(1.4rem,4vw,2.2rem)">Eₖ = ½ · m · v²</div>
+        <div class="formula-explain">
+          <div class="fe-item"><span>m</span> = masse (kg)</div>
+          <div class="fe-item"><span>v</span> = fart (m/s)</div>
+          <div class="fe-item"><span>Eₖ</span> = Joule (J)</div>
+        </div>
+      </div>
+      <div class="law-example">
+        ⚽ En fotball (0,5 kg) som flyr med 20 m/s: Eₖ = ½ × 0,5 × 400 = <strong>100 J</strong>
+      </div>
+    </div>
+
+    <div class="law-card">
+      <div class="law-number">Energibevaringsloven</div>
+      <h3>Energi kan ikke skapes eller ødelegges</h3>
+      <p>
+        Den totale energien i et lukket system er alltid konstant. Energi kan bare
+        omdannes fra én form til en annen — for eksempel fra potensiell til kinetisk.
+      </p>
+      <div class="law-example">
+        🎢 På en berg-og-dalbane: øverst har vognen mest potensiell energi og minst kinetisk.
+        Nederst er det omvendt — og farten er størst! Totalen er alltid den samme.
+      </div>
+    </div>
+
+    <div class="diagram-row">
+      <div class="diagram-box">
+        <svg viewBox="0 0 220 130" xmlns="http://www.w3.org/2000/svg">
+          <!-- Ground -->
+          <line x1="10" y1="115" x2="210" y2="115" stroke="#2d5c20" stroke-width="3"/>
+          <!-- Ball at height -->
+          <circle cx="110" cy="30" r="18" fill="#ccc" stroke="#888" stroke-width="1.5"/>
+          <text x="110" y="35" text-anchor="middle" fill="#333" font-size="10" font-weight="bold">m</text>
+          <!-- Height arrow -->
+          <line x1="145" y1="48" x2="145" y2="112" stroke="#ffd166" stroke-width="2"/>
+          <polygon points="145,48 140,60 150,60" fill="#ffd166"/>
+          <polygon points="145,112 140,100 150,100" fill="#ffd166"/>
+          <text x="160" y="85" fill="#ffd166" font-size="11" font-weight="bold">h</text>
+          <!-- Label -->
+          <text x="110" y="128" text-anchor="middle" fill="#ff9632" font-size="10">Eₚ = mgh</text>
+          <!-- Gravity arrow -->
+          <line x1="110" y1="48" x2="110" y2="80" stroke="#ef476f" stroke-width="2"/>
+          <polygon points="110,80 105,68 115,68" fill="#ef476f"/>
+          <text x="70" y="68" fill="#ef476f" font-size="9">g (tyngde)</text>
+        </svg>
+        <p>Potensiell energi avhenger av høyde og masse</p>
+      </div>
+      <div class="diagram-box">
+        <svg viewBox="0 0 220 130" xmlns="http://www.w3.org/2000/svg">
+          <!-- Ground -->
+          <line x1="10" y1="100" x2="210" y2="100" stroke="#2d5c20" stroke-width="3"/>
+          <!-- Ball rolling -->
+          <circle cx="80" cy="80" r="18" fill="#ccc" stroke="#888" stroke-width="1.5"/>
+          <!-- Velocity arrow -->
+          <line x1="100" y1="80" x2="170" y2="80" stroke="#00b4d8" stroke-width="3"/>
+          <polygon points="170,74 185,80 170,86" fill="#00b4d8"/>
+          <text x="135" y="70" fill="#00b4d8" font-size="11" font-weight="bold">v</text>
+          <!-- Label -->
+          <text x="110" y="118" text-anchor="middle" fill="#00b4d8" font-size="10">Eₖ = ½mv²</text>
+          <!-- Rotation marks -->
+          <line x1="80" y1="62" x2="80" y2="98" stroke="rgba(0,0,0,0.3)" stroke-width="1"/>
+          <line x1="62" y1="80" x2="98" y2="80" stroke="rgba(0,0,0,0.3)" stroke-width="1"/>
+        </svg>
+        <p>Kinetisk energi øker med kvadratet av farten</p>
+      </div>
+    </div>
+
+    <div class="fact-banner">
+      <div class="icon">💡</div>
+      <div>
+        <strong>Husk:</strong> Enheten for energi er <strong>Joule (J)</strong>, oppkalt etter den britiske fysikeren
+        James Prescott Joule. 1 Joule er omtrent den energien du bruker på å løfte et eple 10 cm opp!
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================ -->
+  <!-- SIMULERING                                                   -->
+  <!-- ============================================================ -->
+  <section class="section" id="simulering">
+    <div class="section-tag tag-green">🎮 Simulering</div>
+    <h2>Ball på skråplan</h2>
+    <p class="lead">
+      En ball ruller ned et 45°-skråplan. Se hvordan potensiell energi (oransje) gjøres om
+      til kinetisk energi (blå) mens ballen akselererer nedover!
+    </p>
+
+    <div class="sim-canvas-wrap">
+      <canvas id="sim-canvas" height="260"></canvas>
+    </div>
+    <div class="sim-controls">
+      <div class="slider-row">
+        <div class="slider-group">
+          <label>Høyde h <span id="sim-h-val">5 m</span></label>
+          <input type="range" id="sim-h" min="2" max="9" value="5" step="1">
+        </div>
+        <div class="slider-group">
+          <label>Masse m <span id="sim-m-val">3 kg</span></label>
+          <input type="range" id="sim-m" min="1" max="8" value="3" step="1">
+        </div>
+      </div>
+      <div class="sim-btn-row">
+        <button class="btn btn-primary" id="sim-start">⚡ Start simulering!</button>
+        <button class="btn btn-secondary" id="sim-reset">↺ Tilbakestill</button>
+        <div id="sim-result"></div>
+      </div>
+    </div>
+
+    <div class="fact-banner" style="margin-top:1.4rem">
+      <div class="icon">🧪</div>
+      <div>
+        <strong>Legg merke til:</strong> Øk høyden og se at energibjelkene starter lenger fra hverandre.
+        Massen endrer energimengden, men <em>sluttfarten er den samme uansett masse</em>!
+        (Fordi Eₚ = mgh og Eₖ = ½mv² — massen kansellerer seg ut i v = √(2gh))
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================ -->
+  <!-- UTFORSK                                                      -->
+  <!-- ============================================================ -->
+  <section class="section" id="utforsk">
+    <div class="section-tag tag-yellow">🔭 Hva skjer hvis...?</div>
+    <h2>Utforsk energiformlene</h2>
+    <p class="lead">Juster masse og høyde og se potensiell energi endre seg i sanntid.</p>
+
+    <div class="explorer-box">
+      <div class="explorer-sliders">
+        <div class="exp-slider">
+          <label>Masse m <span class="val" id="exp-m-val">5 kg</span></label>
+          <input type="range" id="exp-m" min="1" max="20" value="5" step="1">
+        </div>
+        <div class="exp-slider">
+          <label>Høyde h <span class="val" id="exp-h-val">4 m</span></label>
+          <input type="range" id="exp-h" min="1" max="30" value="4" step="1">
+        </div>
+      </div>
+      <div class="exp-result">
+        <div class="exp-formula-line" id="exp-formula">
+          Eₚ = m·g·h = <span class="hi">5</span>·10·<span class="hi">4</span> = <span class="hi">200</span> J
+        </div>
+        <div class="arrow-track">
+          <div class="arrow-fill" id="exp-arrow" style="width:20%"></div>
+        </div>
+        <div class="exp-context" id="exp-context">🍎 Omtrent 200 ganger å løfte et eple 10 cm!</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================ -->
+  <!-- QUIZ                                                         -->
+  <!-- ============================================================ -->
+  <section class="section" id="quiz">
+    <div class="section-tag tag-pink">🎯 Quiz</div>
+    <h2>Test deg selv!</h2>
+    <p class="lead">5 spørsmål om Energi. Tenk deg om — og bruk formlene!</p>
+    <div class="quiz-progress" id="quiz-dots"></div>
+
+    <div class="question-card active" id="q0">
+      <div class="q-number">Spørsmål 1 av 5</div>
+      <div class="q-text">Hva er den riktige enheten for energi?</div>
+      <div class="options" id="opts0"></div>
+      <div class="q-explanation" id="exp0">Energi måles i <strong>Joule (J)</strong>, oppkalt etter James Prescott Joule. Newton (N) er kraft, Watt (W) er effekt.</div>
+      <div class="q-nav"><button class="btn btn-primary" id="next0" style="display:none" onclick="nextQ(1)">Neste →</button></div>
+    </div>
+
+    <div class="question-card" id="q1">
+      <div class="q-number">Spørsmål 2 av 5</div>
+      <div class="q-text">En stein med masse 2 kg ligger 5 m over bakken (g = 10 m/s²). Hva er den potensielle energien?</div>
+      <div class="options" id="opts1"></div>
+      <div class="q-explanation" id="exp1">Eₚ = m·g·h = 2 × 10 × 5 = <strong>100 J</strong>. Husk: masse ganger tyngdeakselerasjon ganger høyde.</div>
+      <div class="q-nav"><button class="btn btn-primary" id="next1" style="display:none" onclick="nextQ(2)">Neste →</button></div>
+    </div>
+
+    <div class="question-card" id="q2">
+      <div class="q-number">Spørsmål 3 av 5</div>
+      <div class="q-text">Hva skjer med kinetisk energi hvis du dobler farten (men holder massen konstant)?</div>
+      <div class="options" id="opts2"></div>
+      <div class="q-explanation" id="exp2">Eₖ = ½mv². Siden v er i annen potens, dobler vi v → v² firedobles → <strong>Eₖ firedobles</strong>. Fart er veldig viktig for kinetisk energi!</div>
+      <div class="q-nav"><button class="btn btn-primary" id="next2" style="display:none" onclick="nextQ(3)">Neste →</button></div>
+    </div>
+
+    <div class="question-card" id="q3">
+      <div class="q-number">Spørsmål 4 av 5</div>
+      <div class="q-text">En ball trilles fra toppen av et skråplan. Hva skjer med energien underveis?</div>
+      <div class="options" id="opts3"></div>
+      <div class="q-explanation" id="exp3">Potensiell energi gjøres gradvis om til <strong>kinetisk energi</strong>. Den totale energimengden er konstant — dette er energibevaringsloven.</div>
+      <div class="q-nav"><button class="btn btn-primary" id="next3" style="display:none" onclick="nextQ(4)">Neste →</button></div>
+    </div>
+
+    <div class="question-card" id="q4">
+      <div class="q-number">Spørsmål 5 av 5</div>
+      <div class="q-text">Hva sier energibevaringsloven?</div>
+      <div class="options" id="opts4"></div>
+      <div class="q-explanation" id="exp4">Energibevaringsloven sier at <strong>energi ikke kan skapes eller ødelegges</strong> — den kan bare omdannes fra én form til en annen.</div>
+      <div class="q-nav"><button class="btn btn-primary" id="next4" style="display:none" onclick="showCompletion()">Se resultatet! 🎉</button></div>
+    </div>
+  </section>
+
+  <!-- COMPLETION -->
+  <section class="section" id="completion">
+    <div class="completion-box">
+      <div style="font-size:3rem">🎉</div>
+      <h2 id="comp-title">Bra jobba!</h2>
+      <div class="big-stars" id="comp-stars">☆☆☆</div>
+      <div class="score-display" id="comp-score">0 <span>/ 5</span></div>
+      <p id="comp-msg">Du har fullført Modul 2!</p>
+      <div class="comp-btns">
+        <button class="btn btn-secondary" onclick="retryQuiz()">↺ Prøv igjen</button>
+        <a href="../" class="btn btn-secondary">← Forsiden</a>
+        <a href="../modul3/" class="btn btn-primary">Neste modul →</a>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page -->
+
+<script>
+const MODULE_NUM = 2;
+const NEXT_MODULE = '../modul3/';
+
+/* ---- Points ---- */
+let sessionPts = +localStorage.getItem('fl_points') || 0;
+document.getElementById('pts').textContent = sessionPts;
+function addPts(n) { sessionPts += n; localStorage.setItem('fl_points', sessionPts); document.getElementById('pts').textContent = sessionPts; }
+
+function scrollTo(id) { document.getElementById(id).scrollIntoView({ behavior:'smooth', block:'start' }); }
+
+const stepSections = ['teori','simulering','utforsk','quiz'];
+const stepBtns = document.querySelectorAll('.step-btn');
+window.addEventListener('scroll', () => {
+  let cur = 0;
+  stepSections.forEach((id,i) => { const el = document.getElementById(id); if (el && el.getBoundingClientRect().top < 120) cur = i; });
+  stepBtns.forEach((b,i) => b.classList.toggle('active', i === cur));
+});
+
+/* ================================================================ */
+/* SIMULATION — Ball on 45° ramp                                    */
+/* ================================================================ */
+const canvas = document.getElementById('sim-canvas');
+const ctx    = canvas.getContext('2d');
+const G = 10, H_SCALE = 22, BALL_R = 14;
+const SIN45 = Math.SQRT1_2, A_RAMP = G * SIN45;
+
+function resize() { canvas.width = canvas.parentElement.clientWidth || 800; }
+resize(); window.addEventListener('resize', () => { resize(); drawInitial(); });
+
+function geom(h) {
+  const gY = canvas.height - 50;
+  const sx = 70, sy = gY - h * H_SCALE;
+  const ex = sx + h * H_SCALE, ey = gY;
+  const Lm = h * Math.SQRT2;
+  return { sx, sy, ex, ey, gY, Lm };
+}
+
+function drawScene(h, m, prog) {
+  const W = canvas.width, H = canvas.height;
+  const g = geom(h);
+  const { sx, sy, ex, ey, gY } = g;
+  ctx.clearRect(0, 0, W, H);
+
+  // Background
+  const sky = ctx.createLinearGradient(0,0,0,gY);
+  sky.addColorStop(0,'#0a1520'); sky.addColorStop(1,'#152236');
+  ctx.fillStyle = sky; ctx.fillRect(0,0,W,gY);
+
+  // Ground
+  ctx.fillStyle = '#1c3a14'; ctx.fillRect(0,gY,W,H-gY);
+  ctx.fillStyle = '#2d5c20'; ctx.fillRect(0,gY,W,3);
+
+  // Ramp surface
+  ctx.strokeStyle = '#90e0ef'; ctx.lineWidth = 3;
+  ctx.beginPath(); ctx.moveTo(sx,sy); ctx.lineTo(ex,ey); ctx.stroke();
+
+  // Ramp support triangle
+  ctx.strokeStyle = 'rgba(144,224,239,0.2)'; ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(sx,sy); ctx.lineTo(sx,gY); ctx.lineTo(ex,gY); ctx.closePath(); ctx.stroke();
+
+  // Height label
+  ctx.strokeStyle = 'rgba(255,209,102,0.5)'; ctx.lineWidth=1; ctx.setLineDash([3,3]);
+  ctx.beginPath(); ctx.moveTo(sx-22,sy); ctx.lineTo(sx-22,gY); ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.fillStyle='#ffd166'; ctx.font='bold 11px Nunito';
+  ctx.fillText(`h = ${h} m`, sx-60, (sy+gY)/2+4);
+
+  // Ball position
+  const bx = sx + prog*(ex-sx), by = sy + prog*(ey-sy);
+  const bg = ctx.createRadialGradient(bx-4,by-4,1,bx,by,BALL_R);
+  bg.addColorStop(0,'#fff'); bg.addColorStop(0.5,'#ccc'); bg.addColorStop(1,'#888');
+  ctx.beginPath(); ctx.arc(bx,by,BALL_R,0,Math.PI*2);
+  ctx.fillStyle = bg; ctx.fill();
+  ctx.strokeStyle='#555'; ctx.lineWidth=1; ctx.stroke();
+
+  // Energy bars
+  const barArea = W > 500 ? ex + 40 : 10;
+  const barW = Math.min(W - barArea - 90, 200);
+  if (barW > 60) {
+    const bH = 16, curH = h*(1-prog);
+    const Ep = m*G*curH, Etot = m*G*h, Ek = Etot - Ep;
+    const by2 = gY - 30, by1 = by2 - 26;
+
+    ctx.fillStyle='rgba(255,150,50,0.12)'; ctx.fillRect(barArea,by1,barW,bH);
+    ctx.fillStyle='#ff9632'; ctx.fillRect(barArea,by1,barW*(Ep/Etot),bH);
+    ctx.fillStyle='rgba(255,255,255,0.4)'; ctx.font='10px Nunito';
+    ctx.fillText('Eₚ (potensiell)',barArea,by1-3);
+    ctx.fillStyle='#ff9632'; ctx.fillText(`${Ep.toFixed(0)} J`,barArea+barW+6,by1+12);
+
+    ctx.fillStyle='rgba(0,180,216,0.12)'; ctx.fillRect(barArea,by2,barW,bH);
+    ctx.fillStyle='#00b4d8'; ctx.fillRect(barArea,by2,barW*(Ek/Etot),bH);
+    ctx.fillStyle='rgba(255,255,255,0.4)'; ctx.fillText('Eₖ (kinetisk)',barArea,by2-3);
+    ctx.fillStyle='#00b4d8'; ctx.fillText(`${Ek.toFixed(0)} J`,barArea+barW+6,by2+12);
+  }
+
+  // Velocity during / after
+  if (prog > 0.05) {
+    const v = Math.sqrt(2*G*h*prog);
+    ctx.fillStyle='rgba(255,255,255,0.6)'; ctx.font='bold 12px Nunito';
+    ctx.fillText(`v = ${v.toFixed(1)} m/s`, 12, 24);
+  }
+}
+
+function drawInitial() {
+  const h = +document.getElementById('sim-h').value;
+  const m = +document.getElementById('sim-m').value;
+  drawScene(h, m, 0);
+}
+drawInitial();
+
+document.getElementById('sim-h').addEventListener('input', e => {
+  document.getElementById('sim-h-val').textContent = e.target.value + ' m'; drawInitial();
+});
+document.getElementById('sim-m').addEventListener('input', e => {
+  document.getElementById('sim-m-val').textContent = e.target.value + ' kg'; drawInitial();
+});
+
+let animId = null;
+document.getElementById('sim-start').addEventListener('click', () => {
+  if (animId) return;
+  const h = +document.getElementById('sim-h').value;
+  const m = +document.getElementById('sim-m').value;
+  const Lm = h * Math.SQRT2;
+  const Ttotal = Math.sqrt(2*Lm / A_RAMP);
+  let t = 0, last = null;
+  document.getElementById('sim-result').style.display = 'none';
+  document.getElementById('sim-start').disabled = true;
+
+  animId = requestAnimationFrame(function step(ts) {
+    if (!last) last = ts;
+    t += (ts-last)/1000; last = ts;
+    const prog = Math.min((t/Ttotal)**2, 1);
+    drawScene(h, m, prog);
+    if (prog < 1) { animId = requestAnimationFrame(step); }
+    else {
+      animId = null;
+      document.getElementById('sim-start').disabled = false;
+      const vf = Math.sqrt(2*G*h);
+      const el = document.getElementById('sim-result');
+      el.style.display = 'block';
+      el.textContent = `✅ Sluttfart: ${vf.toFixed(1)} m/s  |  Eₚ → Eₖ = ${(m*G*h).toFixed(0)} J`;
+    }
+  });
+});
+
+document.getElementById('sim-reset').addEventListener('click', () => {
+  if (animId) { cancelAnimationFrame(animId); animId = null; }
+  document.getElementById('sim-start').disabled = false;
+  document.getElementById('sim-result').style.display = 'none';
+  drawInitial();
+});
+
+/* ================================================================ */
+/* EXPLORER                                                          */
+/* ================================================================ */
+function updateExplorer() {
+  const m = +document.getElementById('exp-m').value;
+  const h = +document.getElementById('exp-h').value;
+  document.getElementById('exp-m-val').textContent = m + ' kg';
+  document.getElementById('exp-h-val').textContent = h + ' m';
+  const Ep = m * G * h;
+  document.getElementById('exp-formula').innerHTML =
+    `Eₚ = m·g·h = <span class="hi">${m}</span>·10·<span class="hi">${h}</span> = <span class="hi">${Ep}</span> J`;
+  document.getElementById('exp-arrow').style.width = Math.min(Ep/2000*100, 100) + '%';
+  let ctx2 = '';
+  if      (Ep < 50)   ctx2 = '🪶 Veldig lite energi — som å løfte en fjær';
+  else if (Ep < 200)  ctx2 = '🍎 Omtrent som å løfte noen epler opp i hylla';
+  else if (Ep < 1000) ctx2 = '🎒 Omtrent som å bære en sekk opp trappene';
+  else if (Ep < 5000) ctx2 = '🚗 Omtrent som å skyve en bil noen meter';
+  else                ctx2 = '🚂 Enorm energi — som et tog i full fart!';
+  document.getElementById('exp-context').textContent = ctx2;
+}
+document.getElementById('exp-m').addEventListener('input', updateExplorer);
+document.getElementById('exp-h').addEventListener('input', updateExplorer);
+updateExplorer();
+
+/* ================================================================ */
+/* QUIZ                                                              */
+/* ================================================================ */
+const questions = [
+  { opts:['Newton (N)','Watt (W)','Joule (J)','Kilogram (kg)'],                                              correct:2 },
+  { opts:['10 J','50 J','100 J','200 J'],                                                                     correct:2 },
+  { opts:['Dobles','Firedobles','Halveres','Forblir den samme'],                                              correct:1 },
+  { opts:['Kinetisk energi gjøres om til potensiell','Potensiell energi gjøres om til kinetisk','Energien forsvinner','Massen øker'], correct:1 },
+  { opts:['Energi kan skapes av varme','Energi forsvinner i vakuum','Energi kan ikke skapes eller ødelegges, bare omdannes','Energi er alltid kinetisk'], correct:2 }
+];
+
+let answers = new Array(5).fill(null), score = 0;
+const dotsEl = document.getElementById('quiz-dots');
+questions.forEach((_,i) => { const d=document.createElement('div'); d.className='qp-dot'; d.id='dot'+i; dotsEl.appendChild(d); });
+questions.forEach((q,qi) => {
+  const c = document.getElementById('opts'+qi);
+  q.opts.forEach((txt,oi) => {
+    const b = document.createElement('button'); b.className='option-btn'; b.textContent=txt;
+    b.addEventListener('click', () => answerQ(qi,oi)); c.appendChild(b);
+  });
+});
+
+function answerQ(qi, chosen) {
+  if (answers[qi] !== null) return;
+  answers[qi] = chosen;
+  const btns = document.getElementById('opts'+qi).querySelectorAll('.option-btn');
+  btns.forEach((b,i) => { b.disabled=true; if(i===questions[qi].correct) b.classList.add('correct'); if(i===chosen&&chosen!==questions[qi].correct) b.classList.add('wrong'); });
+  const dot = document.getElementById('dot'+qi);
+  dot.classList.add('answered');
+  if (chosen === questions[qi].correct) { dot.classList.add('correct'); score++; addPts(20); }
+  else dot.classList.add('wrong');
+  document.getElementById('exp'+qi).style.display = 'block';
+  document.getElementById('next'+qi).style.display = 'inline-block';
+}
+
+function nextQ(qi) {
+  document.getElementById('q'+(qi-1)).classList.remove('active');
+  document.getElementById('q'+qi).classList.add('active');
+  document.getElementById('q'+qi).scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function showCompletion() {
+  document.getElementById('q4').classList.remove('active');
+  const st = score>=5?3:score>=3?2:1;
+  const titles=['Bra forsøk! 💪','Godt jobba! 👍','Fantastisk! 🏆'];
+  const msgs=['Les gjennom teorien og prøv igjen!','Nesten perfekt! Gjennomgå feilene dine.','Du mestrer energi! Klar for neste modul?'];
+  document.getElementById('comp-title').textContent = titles[st-1];
+  document.getElementById('comp-stars').textContent = '⭐'.repeat(st)+'☆'.repeat(3-st);
+  document.getElementById('comp-score').innerHTML = score+' <span>/ 5</span>';
+  document.getElementById('comp-msg').textContent = msgs[st-1];
+  localStorage.setItem(`fl_m${MODULE_NUM}_stars`, st);
+  localStorage.setItem('fl_points', sessionPts);
+  const s = document.getElementById('completion');
+  s.style.display = 'block';
+  s.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function retryQuiz() {
+  answers = new Array(5).fill(null); score = 0;
+  questions.forEach((_,i) => {
+    document.getElementById('dot'+i).className='qp-dot';
+    document.getElementById('exp'+i).style.display='none';
+    document.getElementById('next'+i).style.display='none';
+    document.getElementById('opts'+i).querySelectorAll('.option-btn').forEach(b => { b.disabled=false; b.className='option-btn'; });
+    document.getElementById('q'+i).classList.remove('active');
+  });
+  document.getElementById('q0').classList.add('active');
+  document.getElementById('completion').style.display='none';
+  document.getElementById('quiz').scrollIntoView({behavior:'smooth',block:'start'});
+}
+</script>
+</body>
+</html>

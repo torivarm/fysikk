@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modul 3: Bølger og Lyd – FysikkLab</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/modules.css">
+</head>
+<body>
+
+<header>
+  <div class="hdr-top">
+    <a href="../" class="back-link">← Hjem</a>
+    <div class="hdr-title">Modul 3 · Bølger og Lyd</div>
+    <div class="hdr-pts">⭐ <span id="pts">0</span></div>
+  </div>
+  <div class="step-nav">
+    <button class="step-btn active" onclick="scrollTo('teori')">1 · Teori</button>
+    <button class="step-btn" onclick="scrollTo('simulering')">2 · Simulering</button>
+    <button class="step-btn" onclick="scrollTo('utforsk')">3 · Utforsk</button>
+    <button class="step-btn" onclick="scrollTo('quiz')">4 · Quiz</button>
+  </div>
+</header>
+
+<div class="page">
+
+  <!-- ============================================================ -->
+  <!-- TEORI                                                        -->
+  <!-- ============================================================ -->
+  <section class="section" id="teori">
+    <div class="section-tag tag-blue">📖 Teori</div>
+    <h2>Bølger og Lyd</h2>
+    <p class="lead">
+      Bølger er forstyrrelser som transporterer energi fra ett sted til et annet.
+      Lyd, lys, vanndringer og jordskjelv er alle bølgefenomener!
+    </p>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>🌊 Hva er en bølge?</h3>
+        <p>
+          En bølge er en <strong>rytmisk bevegelse</strong> som sprer energi videre — uten at
+          selve materien flyttes permanent. Tenk på bølger i en dam: vannet beveger seg opp og ned,
+          men det flyter ikke mot kanten. Energien transporteres fremover!
+        </p>
+      </div>
+      <div class="card">
+        <h3>🔊 Hvordan oppstår lyd?</h3>
+        <p>
+          Lyd er <strong>trykkbølger i luft</strong> (eller annet materiale). Når noe vibrerer
+          — for eksempel en høyttaler eller stemmebåndene dine — presser det luften sammen og
+          slapper den av igjen i et mønster. Disse trykkendringene når øret ditt og du hører lyd.
+        </p>
+      </div>
+    </div>
+
+    <div class="law-card">
+      <div class="law-number">Viktig begrep</div>
+      <h3>Frekvens — hvor mange svingninger per sekund</h3>
+      <p>
+        Frekvens (f) er antall fullstendige svingninger (bølgetopper) per sekund.
+        Enheten er <strong>Hertz (Hz)</strong>. Høy frekvens = mange svingninger per sekund = høy tone.
+      </p>
+      <div class="law-example">
+        🎵 Tonen A over midterste C på et piano svinger med <strong>440 Hz</strong> — 440 svingninger hvert sekund!
+        Menneskehørselen dekker ca. 20–20 000 Hz.
+      </div>
+    </div>
+
+    <div class="law-card">
+      <div class="law-number">Viktig begrep</div>
+      <h3>Amplitude — hvor høy er bølgen?</h3>
+      <p>
+        Amplituden er <strong>maksimal utslag</strong> fra likevektsposisjonen — altså «høyden»
+        på bølgen. Stor amplitude = mye energi = høy lydstyrke.
+        Liten amplitude = liten energi = svak lyd.
+      </p>
+      <div class="law-example">
+        🔈 En stille hvisking har liten amplitude. Et kraftig tordenbrak har enorm amplitude — det er
+        der energien fra lynet slippes ut som trykkbølger!
+      </div>
+    </div>
+
+    <div class="law-card">
+      <div class="law-number">Viktig begrep</div>
+      <h3>Bølgelengde og lydhastighet</h3>
+      <p>
+        Bølgelengde (λ) er avstanden mellom to bølgetopper. Lydhastigheten i luft er ca.
+        <strong>343 m/s</strong> (ved romtemperatur). Sammenhengen er:
+      </p>
+      <div class="formula-box" style="margin:1rem 0 0">
+        <div class="formula" style="font-size:clamp(1.4rem,4vw,2rem)">v = f · λ</div>
+        <div class="formula-explain">
+          <div class="fe-item"><span>v</span> = lydhastighet (m/s)</div>
+          <div class="fe-item"><span>f</span> = frekvens (Hz)</div>
+          <div class="fe-item"><span>λ</span> = bølgelengde (m)</div>
+        </div>
+      </div>
+      <div class="law-example">
+        👂 Lyd med frekvens 343 Hz i luft har bølgelengde: λ = v/f = 343/343 = <strong>1 meter</strong>.
+      </div>
+    </div>
+
+    <div class="diagram-row">
+      <div class="diagram-box">
+        <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg">
+          <!-- Sine wave -->
+          <path d="M10,55 Q32.5,10 55,55 Q77.5,100 100,55 Q122.5,10 145,55 Q167.5,100 190,55 Q212.5,10 220,45" fill="none" stroke="#00b4d8" stroke-width="2.5"/>
+          <!-- Amplitude arrows -->
+          <line x1="55" y1="12" x2="55" y2="55" stroke="#ffd166" stroke-width="1.5" stroke-dasharray="3,2"/>
+          <line x1="27" y1="55" x2="27" y2="12" stroke="#ffd166" stroke-width="1.5" stroke-dasharray="3,2"/>
+          <text x="3" y="35" fill="#ffd166" font-size="10" font-weight="bold">A</text>
+          <!-- Center line -->
+          <line x1="10" y1="55" x2="210" y2="55" stroke="rgba(255,255,255,0.2)" stroke-width="1" stroke-dasharray="4,3"/>
+          <!-- Wavelength bracket -->
+          <line x1="10" y1="100" x2="100" y2="100" stroke="#06d6a0" stroke-width="1.5"/>
+          <line x1="10" y1="96" x2="10" y2="104" stroke="#06d6a0" stroke-width="1.5"/>
+          <line x1="100" y1="96" x2="100" y2="104" stroke="#06d6a0" stroke-width="1.5"/>
+          <text x="42" y="110" fill="#06d6a0" font-size="10" font-weight="bold">λ (bølgelengde)</text>
+        </svg>
+        <p>Amplitude (A) = høyde på bølgen, Bølgelengde (λ) = avstand mellom topper</p>
+      </div>
+      <div class="diagram-box">
+        <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg">
+          <!-- Low frequency wave -->
+          <path d="M10,40 Q60,5 110,40 Q160,75 210,40" fill="none" stroke="#ffd166" stroke-width="2.5"/>
+          <text x="12" y="85" fill="#ffd166" font-size="10">Lav frekvens = dyp lyd 🔉</text>
+          <!-- High frequency wave -->
+          <path d="M10,90 Q27.5,75 45,90 Q62.5,105 80,90 Q97.5,75 115,90 Q132.5,105 150,90 Q167.5,75 185,90 Q202.5,105 210,90" fill="none" stroke="#ef476f" stroke-width="2"/>
+          <text x="12" y="110" fill="#ef476f" font-size="10">Høy frekvens = lys lyd 🔔</text>
+        </svg>
+        <p>Høyere frekvens = kortere bølgelengde = lysere tone</p>
+      </div>
+    </div>
+
+    <div class="fact-banner">
+      <div class="icon">💡</div>
+      <div>
+        <strong>Visste du?</strong> Lyd kan ikke reise gjennom verdensrommet! Det er fordi lyd trenger
+        et medium (luft, vann, fast stoff) å vibrere gjennom. I verdensrommet er det nesten ingenting,
+        så filmen «Star Wars» er ikke riktig — eksplosjonene ville vært stille! 🚀
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================ -->
+  <!-- SIMULERING                                                   -->
+  <!-- ============================================================ -->
+  <section class="section" id="simulering">
+    <div class="section-tag tag-green">🎮 Simulering</div>
+    <h2>Interaktiv bølgesimulering</h2>
+    <p class="lead">
+      Se en lydbølge som beveger seg! Juster frekvens og amplitude og se hva som skjer.
+      Frekvens = tonehøyde, Amplitude = lydstyrke.
+    </p>
+
+    <div class="sim-canvas-wrap">
+      <canvas id="sim-canvas" height="200"></canvas>
+    </div>
+    <div class="sim-controls">
+      <div class="slider-row">
+        <div class="slider-group">
+          <label>Frekvens <span id="sim-f-val">3 Hz</span></label>
+          <input type="range" id="sim-f" min="1" max="8" value="3" step="0.5">
+        </div>
+        <div class="slider-group">
+          <label>Amplitude <span id="sim-a-val">60</span></label>
+          <input type="range" id="sim-a" min="15" max="85" value="60" step="5">
+        </div>
+      </div>
+      <div class="sim-btn-row">
+        <button class="btn btn-primary" id="sim-start">▶ Start</button>
+        <button class="btn btn-secondary" id="sim-stop">⏹ Stopp</button>
+        <div id="sim-result" style="display:none"></div>
+      </div>
+    </div>
+
+    <div class="fact-banner" style="margin-top:1.4rem">
+      <div class="icon">🧪</div>
+      <div>
+        <strong>Prøv dette:</strong> Sett frekvensen høy og amplituden liten — det ligner en høy, svak lyd.
+        Sett frekvensen lav og amplituden stor — det ligner en dyp, kraftig bass! 🎵
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================ -->
+  <!-- UTFORSK                                                      -->
+  <!-- ============================================================ -->
+  <section class="section" id="utforsk">
+    <div class="section-tag tag-yellow">🔭 Hva skjer hvis...?</div>
+    <h2>Utforsk bølgelengde</h2>
+    <p class="lead">Gitt lydens fart i luft (343 m/s) — finn bølgelengden for ulike frekvenser.</p>
+
+    <div class="explorer-box">
+      <div class="explorer-sliders">
+        <div class="exp-slider">
+          <label>Frekvens f <span class="val" id="exp-f-val">343 Hz</span></label>
+          <input type="range" id="exp-f" min="20" max="20000" value="343" step="10">
+        </div>
+        <div class="exp-slider">
+          <label>Lydhastighet v <span class="val" id="exp-v-val">343 m/s</span></label>
+          <input type="range" id="exp-v" min="300" max="1500" value="343" step="10">
+        </div>
+      </div>
+      <div class="exp-result">
+        <div class="exp-formula-line" id="exp-formula">
+          λ = v / f = <span class="hi">343</span> / <span class="hi">343</span> = <span class="hi">1.00</span> m
+        </div>
+        <div class="arrow-track">
+          <div class="arrow-fill" id="exp-arrow" style="width:20%"></div>
+        </div>
+        <div class="exp-context" id="exp-context">📏 Bølgelengden er omtrent 1 meter!</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================ -->
+  <!-- QUIZ                                                         -->
+  <!-- ============================================================ -->
+  <section class="section" id="quiz">
+    <div class="section-tag tag-pink">🎯 Quiz</div>
+    <h2>Test deg selv!</h2>
+    <p class="lead">5 spørsmål om bølger og lyd. Har du fått med deg teorien?</p>
+    <div class="quiz-progress" id="quiz-dots"></div>
+
+    <div class="question-card active" id="q0">
+      <div class="q-number">Spørsmål 1 av 5</div>
+      <div class="q-text">Hva er enheten for frekvens?</div>
+      <div class="options" id="opts0"></div>
+      <div class="q-explanation" id="exp0">Frekvens måles i <strong>Hertz (Hz)</strong>, oppkalt etter Heinrich Hertz. 1 Hz betyr én fullstendig svingning per sekund.</div>
+      <div class="q-nav"><button class="btn btn-primary" id="next0" style="display:none" onclick="nextQ(1)">Neste →</button></div>
+    </div>
+
+    <div class="question-card" id="q1">
+      <div class="q-number">Spørsmål 2 av 5</div>
+      <div class="q-text">Hva bestemmer lydstyrken (volumet) til en lydbølge?</div>
+      <div class="options" id="opts1"></div>
+      <div class="q-explanation" id="exp1">Det er <strong>amplituden</strong> som bestemmer lydstyrken. Stor amplitude = mye energi = høy lyd. Frekvensen bestemmer tonehøyden, ikke volumet.</div>
+      <div class="q-nav"><button class="btn btn-primary" id="next1" style="display:none" onclick="nextQ(2)">Neste →</button></div>
+    </div>
+
+    <div class="question-card" id="q2">
+      <div class="q-number">Spørsmål 3 av 5</div>
+      <div class="q-text">Hva er bølgelengde?</div>
+      <div class="options" id="opts2"></div>
+      <div class="q-explanation" id="exp2">Bølgelengden er <strong>avstanden mellom to bølgetopper</strong> (eller to bølgedaler). Symbol: λ (lambda).</div>
+      <div class="q-nav"><button class="btn btn-primary" id="next2" style="display:none" onclick="nextQ(3)">Neste →</button></div>
+    </div>
+
+    <div class="question-card" id="q3">
+      <div class="q-number">Spørsmål 4 av 5</div>
+      <div class="q-text">Kan lyd reise gjennom verdensrommet?</div>
+      <div class="options" id="opts3"></div>
+      <div class="q-explanation" id="exp3"><strong>Nei!</strong> Lyd er trykkbølger og trenger et medium — luft, vann eller fast stoff — å reise gjennom. I verdensrommet er det nesten ingenting, så lyd kan ikke forplante seg.</div>
+      <div class="q-nav"><button class="btn btn-primary" id="next3" style="display:none" onclick="nextQ(4)">Neste →</button></div>
+    </div>
+
+    <div class="question-card" id="q4">
+      <div class="q-number">Spørsmål 5 av 5</div>
+      <div class="q-text">Hva skjer med tonehøyden (lysen/dyphet) når frekvensen øker?</div>
+      <div class="options" id="opts4"></div>
+      <div class="q-explanation" id="exp4">Høyere frekvens betyr <strong>høyere (lysere) tone</strong>. Et barn har gjerne en lysere stemme enn en voksen fordi stemmebåndene vibrerer raskere — altså med høyere frekvens.</div>
+      <div class="q-nav"><button class="btn btn-primary" id="next4" style="display:none" onclick="showCompletion()">Se resultatet! 🎉</button></div>
+    </div>
+  </section>
+
+  <!-- COMPLETION -->
+  <section class="section" id="completion">
+    <div class="completion-box">
+      <div style="font-size:3rem">🎉</div>
+      <h2 id="comp-title">Bra jobba!</h2>
+      <div class="big-stars" id="comp-stars">☆☆☆</div>
+      <div class="score-display" id="comp-score">0 <span>/ 5</span></div>
+      <p id="comp-msg">Du har fullført Modul 3!</p>
+      <div class="comp-btns">
+        <button class="btn btn-secondary" onclick="retryQuiz()">↺ Prøv igjen</button>
+        <a href="../" class="btn btn-secondary">← Forsiden</a>
+        <a href="../modul4/" class="btn btn-primary">Neste modul →</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+const MODULE_NUM = 3;
+let sessionPts = +localStorage.getItem('fl_points') || 0;
+document.getElementById('pts').textContent = sessionPts;
+function addPts(n) { sessionPts += n; localStorage.setItem('fl_points', sessionPts); document.getElementById('pts').textContent = sessionPts; }
+function scrollTo(id) { document.getElementById(id).scrollIntoView({ behavior:'smooth', block:'start' }); }
+
+const stepSections = ['teori','simulering','utforsk','quiz'];
+const stepBtns = document.querySelectorAll('.step-btn');
+window.addEventListener('scroll', () => {
+  let cur=0;
+  stepSections.forEach((id,i)=>{ const el=document.getElementById(id); if(el&&el.getBoundingClientRect().top<120) cur=i; });
+  stepBtns.forEach((b,i)=>b.classList.toggle('active',i===cur));
+});
+
+/* ================================================================ */
+/* SIMULATION — Animated wave                                        */
+/* ================================================================ */
+const canvas = document.getElementById('sim-canvas');
+const ctx    = canvas.getContext('2d');
+let waveAnimId = null, waveT = 0;
+
+function resizeCanvas() { canvas.width = canvas.parentElement.clientWidth || 800; }
+resizeCanvas(); window.addEventListener('resize', () => { resizeCanvas(); if (!waveAnimId) drawWave(); });
+
+function drawWave() {
+  const W = canvas.width, H = canvas.height;
+  const cy = H / 2;
+  const freq = +document.getElementById('sim-f').value;
+  const amp  = +document.getElementById('sim-a').value;
+  const k    = (2 * Math.PI * freq) / W;
+  const omega = freq * 0.8;
+
+  ctx.clearRect(0, 0, W, H);
+
+  // Background gradient
+  const bg = ctx.createLinearGradient(0,0,0,H);
+  bg.addColorStop(0,'#0a1520'); bg.addColorStop(1,'#0d1e30');
+  ctx.fillStyle = bg; ctx.fillRect(0,0,W,H);
+
+  // Center line
+  ctx.strokeStyle='rgba(255,255,255,0.1)'; ctx.lineWidth=1; ctx.setLineDash([5,5]);
+  ctx.beginPath(); ctx.moveTo(0,cy); ctx.lineTo(W,cy); ctx.stroke(); ctx.setLineDash([]);
+
+  // Amplitude guide lines
+  ctx.strokeStyle='rgba(255,209,102,0.25)'; ctx.lineWidth=1; ctx.setLineDash([3,4]);
+  ctx.beginPath(); ctx.moveTo(0,cy-amp); ctx.lineTo(W,cy-amp); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(0,cy+amp); ctx.lineTo(W,cy+amp); ctx.stroke();
+  ctx.setLineDash([]);
+
+  // Amplitude label
+  ctx.fillStyle='rgba(255,209,102,0.7)'; ctx.font='bold 11px Nunito';
+  ctx.fillText('A', 6, cy - amp/2);
+
+  // Wave
+  ctx.beginPath();
+  for (let x = 0; x <= W; x++) {
+    const y = cy - amp * Math.sin(k * x - omega * waveT);
+    x === 0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+  }
+  const wg = ctx.createLinearGradient(0,0,W,0);
+  wg.addColorStop(0,'rgba(0,180,216,0.3)');
+  wg.addColorStop(0.5,'#00b4d8');
+  wg.addColorStop(1,'rgba(0,180,216,0.3)');
+  ctx.strokeStyle=wg; ctx.lineWidth=2.5; ctx.stroke();
+
+  // Fill under wave
+  ctx.lineTo(W,cy); ctx.lineTo(0,cy); ctx.closePath();
+  ctx.fillStyle='rgba(0,180,216,0.06)'; ctx.fill();
+
+  // Wavelength indicator (first full cycle)
+  if (freq <= 5) {
+    const lambda_px = W / freq;
+    ctx.strokeStyle='rgba(6,214,160,0.6)'; ctx.lineWidth=1.5;
+    ctx.beginPath(); ctx.moveTo(30, cy+amp+20); ctx.lineTo(30+lambda_px, cy+amp+20); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(30, cy+amp+14); ctx.lineTo(30, cy+amp+26); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(30+lambda_px, cy+amp+14); ctx.lineTo(30+lambda_px, cy+amp+26); ctx.stroke();
+    ctx.fillStyle='rgba(6,214,160,0.9)'; ctx.font='bold 11px Nunito';
+    ctx.fillText('λ', 30+lambda_px/2-4, cy+amp+35);
+  }
+
+  // Info
+  ctx.fillStyle='rgba(255,255,255,0.55)'; ctx.font='12px Nunito';
+  ctx.fillText(`f = ${freq} Hz`, W-80, 22);
+  ctx.fillText(`A = ${amp}`, W-80, 40);
+
+  waveT += 0.016;
+  if (waveAnimId) waveAnimId = requestAnimationFrame(drawWave);
+}
+drawWave();
+
+document.getElementById('sim-f').addEventListener('input', e => { document.getElementById('sim-f-val').textContent = e.target.value + ' Hz'; });
+document.getElementById('sim-a').addEventListener('input', e => { document.getElementById('sim-a-val').textContent = e.target.value; });
+
+document.getElementById('sim-start').addEventListener('click', () => {
+  if (waveAnimId) return;
+  waveAnimId = requestAnimationFrame(drawWave);
+});
+document.getElementById('sim-stop').addEventListener('click', () => {
+  if (waveAnimId) { cancelAnimationFrame(waveAnimId); waveAnimId = null; }
+});
+
+// Auto-start
+waveAnimId = requestAnimationFrame(drawWave);
+
+/* ================================================================ */
+/* EXPLORER                                                          */
+/* ================================================================ */
+function updateExplorer() {
+  const f = +document.getElementById('exp-f').value;
+  const v = +document.getElementById('exp-v').value;
+  document.getElementById('exp-f-val').textContent = f + ' Hz';
+  document.getElementById('exp-v-val').textContent = v + ' m/s';
+  const lambda = v / f;
+  document.getElementById('exp-formula').innerHTML =
+    `λ = v / f = <span class="hi">${v}</span> / <span class="hi">${f}</span> = <span class="hi">${lambda.toFixed(2)}</span> m`;
+  document.getElementById('exp-arrow').style.width = Math.min(lambda / 20 * 100, 100) + '%';
+  let txt = '';
+  if      (lambda > 10)  txt = '🏠 Bølgelengden er lengre enn et hus!';
+  else if (lambda > 1)   txt = '🚪 Bølgelengden er omtrent som en dør';
+  else if (lambda > 0.1) txt = '📏 Bølgelengden er noen desimeter';
+  else if (lambda > 0.01)txt = '📐 Bølgelengden er noen centimeter';
+  else                   txt = '🔬 Veldig kort bølgelengde — nærmere ultralyd!';
+  document.getElementById('exp-context').textContent = txt;
+}
+document.getElementById('exp-f').addEventListener('input', updateExplorer);
+document.getElementById('exp-v').addEventListener('input', updateExplorer);
+updateExplorer();
+
+/* ================================================================ */
+/* QUIZ                                                              */
+/* ================================================================ */
+const questions = [
+  { opts:['Newton (N)','Hertz (Hz)','Joule (J)','Meter (m)'],                                                correct:1 },
+  { opts:['Frekvensen','Bølgelengden','Amplituden','Lydhastigheten'],                                        correct:2 },
+  { opts:['Høyden til bølgen (amplituden)','Hastigheten til bølgen','Avstanden mellom to bølgetopper','Antall bølger per sekund'], correct:2 },
+  { opts:['Ja, ellers hadde astronauter ikke hørt hverandre','Nei, lyd trenger et medium å reise gjennom','Ja, men veldig sakte','Bare lavfrekvente lyder kan reise gjennom vakuum'], correct:1 },
+  { opts:['Lyden blir dypere (lavere tone)','Tonehøyden endrer seg ikke','Lyden blir lysere (høyere tone)','Lyden forsvinner'], correct:2 }
+];
+
+let answers=new Array(5).fill(null), score=0;
+const dotsEl=document.getElementById('quiz-dots');
+questions.forEach((_,i)=>{ const d=document.createElement('div'); d.className='qp-dot'; d.id='dot'+i; dotsEl.appendChild(d); });
+questions.forEach((q,qi)=>{
+  const c=document.getElementById('opts'+qi);
+  q.opts.forEach((txt,oi)=>{ const b=document.createElement('button'); b.className='option-btn'; b.textContent=txt; b.addEventListener('click',()=>answerQ(qi,oi)); c.appendChild(b); });
+});
+
+function answerQ(qi,chosen) {
+  if(answers[qi]!==null) return;
+  answers[qi]=chosen;
+  const btns=document.getElementById('opts'+qi).querySelectorAll('.option-btn');
+  btns.forEach((b,i)=>{ b.disabled=true; if(i===questions[qi].correct) b.classList.add('correct'); if(i===chosen&&chosen!==questions[qi].correct) b.classList.add('wrong'); });
+  const dot=document.getElementById('dot'+qi);
+  dot.classList.add('answered');
+  if(chosen===questions[qi].correct){ dot.classList.add('correct'); score++; addPts(20); } else dot.classList.add('wrong');
+  document.getElementById('exp'+qi).style.display='block';
+  document.getElementById('next'+qi).style.display='inline-block';
+}
+
+function nextQ(qi) {
+  document.getElementById('q'+(qi-1)).classList.remove('active');
+  document.getElementById('q'+qi).classList.add('active');
+  document.getElementById('q'+qi).scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function showCompletion() {
+  document.getElementById('q4').classList.remove('active');
+  const st=score>=5?3:score>=3?2:1;
+  const titles=['Bra forsøk! 💪','Godt jobba! 👍','Fantastisk! 🏆'];
+  const msgs=['Les gjennom teorien og prøv igjen!','Nesten perfekt! Se på feilene dine.','Du mestrer bølger og lyd! Videre til optikk?'];
+  document.getElementById('comp-title').textContent=titles[st-1];
+  document.getElementById('comp-stars').textContent='⭐'.repeat(st)+'☆'.repeat(3-st);
+  document.getElementById('comp-score').innerHTML=score+' <span>/ 5</span>';
+  document.getElementById('comp-msg').textContent=msgs[st-1];
+  localStorage.setItem(`fl_m${MODULE_NUM}_stars`,st);
+  localStorage.setItem('fl_points',sessionPts);
+  const s=document.getElementById('completion');
+  s.style.display='block';
+  s.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function retryQuiz() {
+  answers=new Array(5).fill(null); score=0;
+  questions.forEach((_,i)=>{
+    document.getElementById('dot'+i).className='qp-dot';
+    document.getElementById('exp'+i).style.display='none';
+    document.getElementById('next'+i).style.display='none';
+    document.getElementById('opts'+i).querySelectorAll('.option-btn').forEach(b=>{b.disabled=false;b.className='option-btn';});
+    document.getElementById('q'+i).classList.remove('active');
+  });
+  document.getElementById('q0').classList.add('active');
+  document.getElementById('completion').style.display='none';
+  document.getElementById('quiz').scrollIntoView({behavior:'smooth',block:'start'});
+}
+</script>
+</body>
+</html>

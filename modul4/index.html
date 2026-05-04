@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modul 4: Lys og Optikk – FysikkLab</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/modules.css">
+</head>
+<body>
+
+<header>
+  <div class="hdr-top">
+    <a href="../" class="back-link">← Hjem</a>
+    <div class="hdr-title">Modul 4 · Lys og Optikk</div>
+    <div class="hdr-pts">⭐ <span id="pts">0</span></div>
+  </div>
+  <div class="step-nav">
+    <button class="step-btn active" onclick="scrollTo('teori')">1 · Teori</button>
+    <button class="step-btn" onclick="scrollTo('simulering')">2 · Simulering</button>
+    <button class="step-btn" onclick="scrollTo('utforsk')">3 · Utforsk</button>
+    <button class="step-btn" onclick="scrollTo('quiz')">4 · Quiz</button>
+  </div>
+</header>
+
+<div class="page">
+
+  <!-- ============================================================ -->
+  <!-- TEORI                                                        -->
+  <!-- ============================================================ -->
+  <section class="section" id="teori">
+    <div class="section-tag tag-blue">📖 Teori</div>
+    <h2>Lys og Optikk</h2>
+    <p class="lead">
+      Lys er elektromagnetisk stråling som øyet kan oppfatte. Det er den raskeste tingen
+      i universet — men det kan bøyes, reflekteres og brytes når det treffer ulike materialer!
+    </p>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>⚡ Lysets hastighet</h3>
+        <p>
+          I vakuum beveger lys seg med ca. <strong>300 000 km/s</strong> — det er omtrent
+          en milliard km/t! Lyset bruker bare ca. 8 minutter fra solen til jorden, selv om
+          avstanden er 150 millioner kilometer.
+        </p>
+      </div>
+      <div class="card">
+        <h3>🎨 Farger i lys</h3>
+        <p>
+          Hvitt lys er egentlig en blanding av <strong>alle regnbuefargene</strong>.
+          Et prisme (trekantet glassbit) kan splitte hvitt lys i spekteret: rødt, oransje,
+          gult, grønt, blått, indigo og fiolett. Regnbuen er et naturlig prisme av vanndråper!
+        </p>
+      </div>
+    </div>
+
+    <div class="law-card">
+      <div class="law-number">Refleksjon</div>
+      <h3>Refleksjonsloven: innfallsvinkel = refleksjonsvinkel</h3>
+      <p>
+        Når lys treffer en speilende flate, reflekteres det slik at vinkelen til den loddrette
+        linjen (normalen) er like stor på inn- og utsiden.
+      </p>
+      <div class="formula-box" style="margin:1rem 0 0">
+        <div class="formula" style="font-size:clamp(1.4rem,4vw,2rem)">θᵢ = θᵣ</div>
+        <div class="formula-explain">
+          <div class="fe-item"><span>θᵢ</span> = innfallsvinkel</div>
+          <div class="fe-item"><span>θᵣ</span> = refleksjonsvinkel</div>
+          <div class="fe-item">(begge målt fra normalen)</div>
+        </div>
+      </div>
+      <div class="law-example">
+        🪞 Tenk på en speilball på billiard: ballen spretter av kantene med lik vinkel som den kom inn med.
+        Lys gjør nøyaktig det samme mot et speil!
+      </div>
+    </div>
+
+    <div class="law-card">
+      <div class="law-number">Brytning (refraksjon)</div>
+      <h3>Lyset bøyes når det skifter medium</h3>
+      <p>
+        Når lys går fra ett materiale til et annet (f.eks. fra luft til vann), endrer
+        hastigheten seg — og da bøyes lysstrålen. Dette kalles <strong>brytning</strong>.
+        Snells lov beskriver dette matematisk.
+      </p>
+      <div class="law-example">
+        🥤 Ha en sugerør i et glass vann og se det! Sugerøret ser ut til å bøye seg ved vannoverflaten
+        fordi lyset bøyes når det går fra vann til luft. Øyet ditt «ser» strålen som rett linje bakover,
+        og tror sugerøret er på et annet sted.
+      </div>
+    </div>
+
+    <div class="law-card">
+      <div class="law-number">Dispersjon</div>
+      <h3>Hvitt lys spaltes i regnbuefarger</h3>
+      <p>
+        Ulike farger av lys brytes <em>ulike mye</em> i glass/vann. Fiolett lys brytes mest,
+        rødt lys brytes minst. Dette fører til at hvitt lys spaltes i et spekter.
+      </p>
+      <div class="law-example">
+        🌈 En regnbue dannes av millioner av vanndråper som hver fungerer som et lite prisme.
+        Solen lyser inn, lyset brytes og spaltes, og reflekteres tilbake til øynene dine som en bue.
+      </div>
+    </div>
+
+    <div class="diagram-row">
+      <div class="diagram-box">
+        <svg viewBox="0 0 220 140" xmlns="http://www.w3.org/2000/svg">
+          <!-- Mirror -->
+          <line x1="20" y1="90" x2="200" y2="90" stroke="#90e0ef" stroke-width="3"/>
+          <!-- Mirror pattern -->
+          <line x1="30" y1="90" x2="25" y2="100" stroke="#90e0ef" stroke-width="1" opacity="0.5"/>
+          <line x1="55" y1="90" x2="50" y2="100" stroke="#90e0ef" stroke-width="1" opacity="0.5"/>
+          <line x1="80" y1="90" x2="75" y2="100" stroke="#90e0ef" stroke-width="1" opacity="0.5"/>
+          <line x1="105" y1="90" x2="100" y2="100" stroke="#90e0ef" stroke-width="1" opacity="0.5"/>
+          <line x1="130" y1="90" x2="125" y2="100" stroke="#90e0ef" stroke-width="1" opacity="0.5"/>
+          <line x1="155" y1="90" x2="150" y2="100" stroke="#90e0ef" stroke-width="1" opacity="0.5"/>
+          <!-- Normal -->
+          <line x1="110" y1="20" x2="110" y2="100" stroke="rgba(255,255,255,0.3)" stroke-width="1" stroke-dasharray="5,4"/>
+          <text x="114" y="18" fill="rgba(255,255,255,0.5)" font-size="9">Normal</text>
+          <!-- Incoming ray -->
+          <line x1="55" y1="20" x2="110" y2="90" stroke="#ffd166" stroke-width="2.5"/>
+          <polygon points="108,82 103,94 113,88" fill="#ffd166"/>
+          <!-- Reflected ray -->
+          <line x1="110" y1="90" x2="165" y2="20" stroke="#06d6a0" stroke-width="2.5"/>
+          <polygon points="163,26 158,14 168,20" fill="#06d6a0"/>
+          <!-- Angles -->
+          <path d="M 95 78 A 20 20 0 0 1 110 58" fill="none" stroke="#ffd166" stroke-width="1.5"/>
+          <text x="68" y="70" fill="#ffd166" font-size="10" font-weight="bold">θᵢ</text>
+          <path d="M 110 58 A 20 20 0 0 1 125 78" fill="none" stroke="#06d6a0" stroke-width="1.5"/>
+          <text x="128" y="70" fill="#06d6a0" font-size="10" font-weight="bold">θᵣ</text>
+          <text x="80" y="120" fill="#ffd166" font-size="9">Innfall</text>
+          <text x="130" y="120" fill="#06d6a0" font-size="9">Refleksjon</text>
+        </svg>
+        <p>θᵢ = θᵣ — innfallsvinkel alltid lik refleksjonsvinkel</p>
+      </div>
+      <div class="diagram-box">
+        <svg viewBox="0 0 220 140" xmlns="http://www.w3.org/2000/svg">
+          <!-- Water surface -->
+          <line x1="10" y1="65" x2="210" y2="65" stroke="#00b4d8" stroke-width="2.5" opacity="0.7"/>
+          <text x="160" y="60" fill="#00b4d8" font-size="9" opacity="0.8">Luft</text>
+          <text x="160" y="80" fill="#00b4d8" font-size="9" opacity="0.8">Vann</text>
+          <!-- Incoming ray (from top) -->
+          <line x1="80" y1="10" x2="110" y2="65" stroke="#ffd166" stroke-width="2.5"/>
+          <polygon points="108,57 103,68 113,64" fill="#ffd166"/>
+          <!-- Refracted ray (into water, more vertical) -->
+          <line x1="110" y1="65" x2="120" y2="130" stroke="#ffd166" stroke-width="2" stroke-dasharray="6,3"/>
+          <polygon points="118,123 113,133 123,132" fill="#ffd166"/>
+          <!-- Normal in water -->
+          <line x1="110" y1="30" x2="110" y2="130" stroke="rgba(255,255,255,0.2)" stroke-width="1" stroke-dasharray="4,4"/>
+          <!-- Label -->
+          <text x="125" y="100" fill="#ffd166" font-size="9">Brutt stråle</text>
+          <text x="20" y="40" fill="#ffd166" font-size="9">Innfall</text>
+          <text x="55" y="115" fill="rgba(255,255,255,0.5)" font-size="9">Bøyer seg ved</text>
+          <text x="55" y="127" fill="rgba(255,255,255,0.5)" font-size="9">overgangen!</text>
+        </svg>
+        <p>Lys bøyes (brytes) når det skifter medium</p>
+      </div>
+    </div>
+
+    <div class="fact-banner">
+      <div class="icon">💡</div>
+      <div>
+        <strong>Visste du?</strong> Lys fra solen bruker ca. 8 minutter på å nå jorden.
+        Det betyr at solen du ser på himmelen faktisk er som den <em>var</em> for 8 minutter siden.
+        Og de fjerneste stjernene du ser på nattehimmelen — lyset derfra kan ha reist i millioner av år! 🌟
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================ -->
+  <!-- SIMULERING                                                   -->
+  <!-- ============================================================ -->
+  <section class="section" id="simulering">
+    <div class="section-tag tag-green">🎮 Simulering</div>
+    <h2>Refleksjon — interaktiv speilsimulering</h2>
+    <p class="lead">
+      Endre innfallsvinkelen og se refleksjonsloven i aksjon!
+      Legg merke til at de to vinklene alltid er like store.
+    </p>
+
+    <div class="sim-canvas-wrap">
+      <canvas id="sim-canvas" height="280"></canvas>
+    </div>
+    <div class="sim-controls">
+      <div class="slider-row" style="grid-template-columns:1fr">
+        <div class="slider-group">
+          <label>Innfallsvinkel θ <span id="sim-angle-val">40°</span></label>
+          <input type="range" id="sim-angle" min="5" max="80" value="40" step="1">
+        </div>
+      </div>
+      <div class="sim-btn-row">
+        <span style="font-size:0.9rem;color:var(--muted)">💡 Dra glidebryteren for å endre vinkelen</span>
+      </div>
+    </div>
+
+    <div class="fact-banner" style="margin-top:1.4rem">
+      <div class="icon">🧪</div>
+      <div>
+        <strong>Prøv dette:</strong> Sett vinkelen til 0° (normalt innfall) — da reflekteres lyset
+        rett tilbake. Sett vinkelen til 80° — da «skraper» lyset nesten langs speilflaten. Samme lov, alltid!
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================ -->
+  <!-- UTFORSK                                                      -->
+  <!-- ============================================================ -->
+  <section class="section" id="utforsk">
+    <div class="section-tag tag-yellow">🔭 Hva skjer hvis...?</div>
+    <h2>Utforsk refleksjonsloven</h2>
+    <p class="lead">Lysstrålen din treffer speilet. Hvilken vei reflekteres den?</p>
+
+    <div class="explorer-box">
+      <div class="explorer-sliders">
+        <div class="exp-slider">
+          <label>Innfallsvinkel θᵢ <span class="val" id="exp-a-val">30°</span></label>
+          <input type="range" id="exp-a" min="0" max="89" value="30" step="1">
+        </div>
+        <div class="exp-slider" style="display:flex;flex-direction:column;justify-content:center">
+          <div style="background:rgba(6,214,160,0.12);border:1px solid rgba(6,214,160,0.3);border-radius:12px;padding:1rem;text-align:center">
+            <div style="font-size:0.8rem;color:var(--muted);margin-bottom:0.3rem">Refleksjonsvinkel θᵣ</div>
+            <div style="font-size:2rem;font-weight:800;color:var(--success)" id="exp-result-angle">30°</div>
+            <div style="font-size:0.85rem;color:var(--muted)">θᵢ = θᵣ alltid!</div>
+          </div>
+        </div>
+      </div>
+      <div class="exp-result">
+        <div class="exp-formula-line" id="exp-formula">
+          θᵣ = θᵢ = <span class="hi">30</span>° (refleksjonsloven)
+        </div>
+        <div class="arrow-track">
+          <div class="arrow-fill" id="exp-arrow" style="width:33%"></div>
+        </div>
+        <div class="exp-context" id="exp-context">↗️ Lysstrålen reflekteres med 30° fra normalen</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================ -->
+  <!-- QUIZ                                                         -->
+  <!-- ============================================================ -->
+  <section class="section" id="quiz">
+    <div class="section-tag tag-pink">🎯 Quiz</div>
+    <h2>Test deg selv!</h2>
+    <p class="lead">5 spørsmål om lys og optikk. Husk formler og eksempler!</p>
+    <div class="quiz-progress" id="quiz-dots"></div>
+
+    <div class="question-card active" id="q0">
+      <div class="q-number">Spørsmål 1 av 5</div>
+      <div class="q-text">Hva er lysets omtrentlige hastighet i vakuum?</div>
+      <div class="options" id="opts0"></div>
+      <div class="q-explanation" id="exp0">Lysets hastighet i vakuum er ca. <strong>300 000 km/s</strong> (mer presist: 299 792 458 m/s). Dette er den høyeste mulige hastigheten i universet!</div>
+      <div class="q-nav"><button class="btn btn-primary" id="next0" style="display:none" onclick="nextQ(1)">Neste →</button></div>
+    </div>
+
+    <div class="question-card" id="q1">
+      <div class="q-number">Spørsmål 2 av 5</div>
+      <div class="q-text">En lysstråle treffer et speil med innfallsvinkel 35°. Hva er refleksjonsvinkelen?</div>
+      <div class="options" id="opts1"></div>
+      <div class="q-explanation" id="exp1">Refleksjonsloven sier at innfallsvinkel = refleksjonsvinkel. Så svaret er <strong>35°</strong>. Begge vinkler måles fra den loddrette normalen.</div>
+      <div class="q-nav"><button class="btn btn-primary" id="next1" style="display:none" onclick="nextQ(2)">Neste →</button></div>
+    </div>
+
+    <div class="question-card" id="q2">
+      <div class="q-number">Spørsmål 3 av 5</div>
+      <div class="q-text">Hva skjer med lyset når det går fra luft og inn i vann?</div>
+      <div class="options" id="opts2"></div>
+      <div class="q-explanation" id="exp2">Lys <strong>brytes (bøyes)</strong> når det skifter medium fordi hastigheten endrer seg. I vann er lyset langsommere enn i luft, og strålen bøyes mot normalen.</div>
+      <div class="q-nav"><button class="btn btn-primary" id="next2" style="display:none" onclick="nextQ(3)">Neste →</button></div>
+    </div>
+
+    <div class="question-card" id="q3">
+      <div class="q-number">Spørsmål 4 av 5</div>
+      <div class="q-text">Hva er dispersjon?</div>
+      <div class="options" id="opts3"></div>
+      <div class="q-explanation" id="exp3"><strong>Dispersjon</strong> er fenomenet der hvitt lys spaltes i sine bestanddeler (regnbuefarger) fordi ulike farger brytes ulikt. Et prisme eller vanndråper i en regnbue viser dispersjon.</div>
+      <div class="q-nav"><button class="btn btn-primary" id="next3" style="display:none" onclick="nextQ(4)">Neste →</button></div>
+    </div>
+
+    <div class="question-card" id="q4">
+      <div class="q-number">Spørsmål 5 av 5</div>
+      <div class="q-text">Hvilken farge i det synlige spekteret har høyest frekvens?</div>
+      <div class="options" id="opts4"></div>
+      <div class="q-explanation" id="exp4"><strong>Fiolett</strong> lys har høyest frekvens (og kortest bølgelengde) i det synlige spekteret. Rødt lys har lavest frekvens. Huskeregel: ROGGBIF (Rød-Oransje-Gul-Grønn-Blå-Indigo-Fiolett).</div>
+      <div class="q-nav"><button class="btn btn-primary" id="next4" style="display:none" onclick="showCompletion()">Se resultatet! 🎉</button></div>
+    </div>
+  </section>
+
+  <!-- COMPLETION -->
+  <section class="section" id="completion">
+    <div class="completion-box">
+      <div style="font-size:3rem">🎉</div>
+      <h2 id="comp-title">Bra jobba!</h2>
+      <div class="big-stars" id="comp-stars">☆☆☆</div>
+      <div class="score-display" id="comp-score">0 <span>/ 5</span></div>
+      <p id="comp-msg">Du har fullført Modul 4!</p>
+      <div class="comp-btns">
+        <button class="btn btn-secondary" onclick="retryQuiz()">↺ Prøv igjen</button>
+        <a href="../" class="btn btn-secondary">← Forsiden</a>
+        <a href="../modul5/" class="btn btn-primary">Neste modul →</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+const MODULE_NUM = 4;
+let sessionPts = +localStorage.getItem('fl_points') || 0;
+document.getElementById('pts').textContent = sessionPts;
+function addPts(n) { sessionPts += n; localStorage.setItem('fl_points', sessionPts); document.getElementById('pts').textContent = sessionPts; }
+function scrollTo(id) { document.getElementById(id).scrollIntoView({ behavior:'smooth', block:'start' }); }
+
+const stepSections=['teori','simulering','utforsk','quiz'];
+const stepBtns=document.querySelectorAll('.step-btn');
+window.addEventListener('scroll',()=>{
+  let cur=0;
+  stepSections.forEach((id,i)=>{const el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<120)cur=i;});
+  stepBtns.forEach((b,i)=>b.classList.toggle('active',i===cur));
+});
+
+/* ================================================================ */
+/* SIMULATION — Light reflection                                     */
+/* ================================================================ */
+const canvas = document.getElementById('sim-canvas');
+const ctx    = canvas.getContext('2d');
+
+function resizeCanvas() { canvas.width = canvas.parentElement.clientWidth || 800; }
+resizeCanvas(); window.addEventListener('resize', () => { resizeCanvas(); drawReflection(); });
+
+function drawArrowhead(x1,y1,x2,y2,color,size=10) {
+  const angle=Math.atan2(y2-y1,x2-x1);
+  ctx.fillStyle=color;
+  ctx.beginPath();
+  ctx.moveTo(x2,y2);
+  ctx.lineTo(x2-size*Math.cos(angle-0.4),y2-size*Math.sin(angle-0.4));
+  ctx.lineTo(x2-size*Math.cos(angle+0.4),y2-size*Math.sin(angle+0.4));
+  ctx.closePath(); ctx.fill();
+}
+
+function drawReflection() {
+  const W=canvas.width, H=canvas.height;
+  const deg=+document.getElementById('sim-angle').value;
+  const rad=deg*Math.PI/180;
+  const mY=H*0.62; // mirror Y
+  const cx=W/2;
+  const rayLen=Math.min(H*0.55, 220);
+
+  ctx.clearRect(0,0,W,H);
+
+  // Background
+  ctx.fillStyle='#0a1520'; ctx.fillRect(0,0,W,H);
+
+  // Medium labels
+  ctx.font='bold 12px Nunito';
+  ctx.fillStyle='rgba(144,224,239,0.5)';
+  ctx.fillText('Luft',14,mY-20);
+  ctx.fillStyle='rgba(144,224,239,0.3)';
+  ctx.fillRect(0,mY+4,W,H-mY-4);
+  ctx.fillStyle='rgba(144,224,239,0.5)';
+  ctx.fillText('Speil',14,mY+25);
+
+  // Mirror
+  ctx.strokeStyle='#90e0ef'; ctx.lineWidth=3;
+  ctx.beginPath(); ctx.moveTo(20,mY); ctx.lineTo(W-20,mY); ctx.stroke();
+  // Hatching
+  ctx.strokeStyle='rgba(144,224,239,0.3)'; ctx.lineWidth=1;
+  for(let x=30;x<W-20;x+=22){
+    ctx.beginPath(); ctx.moveTo(x,mY); ctx.lineTo(x-12,mY+14); ctx.stroke();
+  }
+
+  // Normal line
+  ctx.strokeStyle='rgba(255,255,255,0.25)'; ctx.lineWidth=1.5; ctx.setLineDash([6,4]);
+  ctx.beginPath(); ctx.moveTo(cx,mY-rayLen*0.8); ctx.lineTo(cx,mY+40); ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.fillStyle='rgba(255,255,255,0.45)'; ctx.font='11px Nunito';
+  ctx.fillText('Normal',cx+6, mY-rayLen*0.8+4);
+
+  // Incoming ray
+  const ix=cx-rayLen*Math.sin(rad), iy=mY-rayLen*Math.cos(rad);
+  ctx.strokeStyle='#ffd166'; ctx.lineWidth=3;
+  ctx.beginPath(); ctx.moveTo(ix,iy); ctx.lineTo(cx,mY); ctx.stroke();
+  drawArrowhead(ix,iy,cx,mY,'#ffd166');
+  ctx.fillStyle='#ffd166'; ctx.font='bold 12px Nunito';
+  const lx=ix<cx/2?ix:ix-70;
+  ctx.fillText('Innfallsstråle',lx, iy+16);
+
+  // Reflected ray
+  const rx=cx+rayLen*Math.sin(rad), ry=mY-rayLen*Math.cos(rad);
+  ctx.strokeStyle='#06d6a0'; ctx.lineWidth=3;
+  ctx.beginPath(); ctx.moveTo(cx,mY); ctx.lineTo(rx,ry); ctx.stroke();
+  drawArrowhead(cx,mY,rx,ry,'#06d6a0');
+  ctx.fillStyle='#06d6a0'; ctx.font='bold 12px Nunito';
+  ctx.fillText('Reflektert stråle', rx>W-130?rx-120:rx+6, ry+16);
+
+  // Angle arcs and labels
+  const arcR=50;
+  // Incoming angle (from normal)
+  ctx.strokeStyle='rgba(255,209,102,0.8)'; ctx.lineWidth=2;
+  ctx.beginPath();
+  ctx.arc(cx,mY,arcR,-Math.PI/2-rad,-Math.PI/2); ctx.stroke();
+  ctx.fillStyle='#ffd166'; ctx.font='bold 13px Nunito';
+  ctx.fillText(`${deg}°`,cx-arcR*Math.sin(rad/2)-26,mY-arcR*Math.cos(rad/2)+4);
+
+  // Reflected angle
+  ctx.strokeStyle='rgba(6,214,160,0.8)'; ctx.lineWidth=2;
+  ctx.beginPath();
+  ctx.arc(cx,mY,arcR,-Math.PI/2,-Math.PI/2+rad); ctx.stroke();
+  ctx.fillStyle='#06d6a0';
+  ctx.fillText(`${deg}°`,cx+arcR*Math.sin(rad/2)+8,mY-arcR*Math.cos(rad/2)+4);
+
+  // Law label
+  ctx.fillStyle='rgba(255,255,255,0.5)'; ctx.font='12px Nunito';
+  ctx.fillText(`θᵢ = θᵣ = ${deg}°`,cx-35,mY+35);
+}
+
+drawReflection();
+document.getElementById('sim-angle').addEventListener('input', e=>{
+  document.getElementById('sim-angle-val').textContent=e.target.value+'°';
+  drawReflection();
+});
+
+/* ================================================================ */
+/* EXPLORER                                                          */
+/* ================================================================ */
+function updateExplorer() {
+  const a=+document.getElementById('exp-a').value;
+  document.getElementById('exp-a-val').textContent=a+'°';
+  document.getElementById('exp-result-angle').textContent=a+'°';
+  document.getElementById('exp-formula').innerHTML=
+    `θᵣ = θᵢ = <span class="hi">${a}</span>° (refleksjonsloven)`;
+  document.getElementById('exp-arrow').style.width=Math.max(a/90*100,5)+'%';
+  let txt='';
+  if(a<10)       txt='↑ Nesten normalt innfall — strålen spretter rett tilbake';
+  else if(a<30)  txt='↗️ Lysstrålen reflekteres med lav vinkel fra normalen';
+  else if(a<60)  txt='↗️ Lysstrålen reflekteres med '+a+'° fra normalen';
+  else if(a<80)  txt='↪️ Lysstrålen skraper nesten langs speilflaten!';
+  else           txt='↔️ Nesten flatt innfall — strålen spretter langs flaten';
+  document.getElementById('exp-context').textContent=txt;
+}
+document.getElementById('exp-a').addEventListener('input', updateExplorer);
+updateExplorer();
+
+/* ================================================================ */
+/* QUIZ                                                              */
+/* ================================================================ */
+const questions=[
+  {opts:['3 000 km/s','300 km/s','300 000 km/s','3 000 000 km/s'],                                                     correct:2},
+  {opts:['70°','55°','35°','45°'],                                                                                      correct:2},
+  {opts:['Det reflekteres tilbake','Det brytes (bøyes)','Det stopper','Det blir hvitt'],                                 correct:1},
+  {opts:['At lys alltid beveger seg i rett linje','At lys er raskere i vann','At hvitt lys spaltes i regnbuefarger i et prisme','At refleksjonsvinkel alltid er 90°'], correct:2},
+  {opts:['Rød','Grønn','Blå','Fiolett'],                                                                                 correct:3}
+];
+
+let answers=new Array(5).fill(null),score=0;
+const dotsEl=document.getElementById('quiz-dots');
+questions.forEach((_,i)=>{const d=document.createElement('div');d.className='qp-dot';d.id='dot'+i;dotsEl.appendChild(d);});
+questions.forEach((q,qi)=>{
+  const c=document.getElementById('opts'+qi);
+  q.opts.forEach((txt,oi)=>{const b=document.createElement('button');b.className='option-btn';b.textContent=txt;b.addEventListener('click',()=>answerQ(qi,oi));c.appendChild(b);});
+});
+
+function answerQ(qi,chosen){
+  if(answers[qi]!==null)return;
+  answers[qi]=chosen;
+  const btns=document.getElementById('opts'+qi).querySelectorAll('.option-btn');
+  btns.forEach((b,i)=>{b.disabled=true;if(i===questions[qi].correct)b.classList.add('correct');if(i===chosen&&chosen!==questions[qi].correct)b.classList.add('wrong');});
+  const dot=document.getElementById('dot'+qi);dot.classList.add('answered');
+  if(chosen===questions[qi].correct){dot.classList.add('correct');score++;addPts(20);}else dot.classList.add('wrong');
+  document.getElementById('exp'+qi).style.display='block';
+  document.getElementById('next'+qi).style.display='inline-block';
+}
+
+function nextQ(qi){
+  document.getElementById('q'+(qi-1)).classList.remove('active');
+  document.getElementById('q'+qi).classList.add('active');
+  document.getElementById('q'+qi).scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function showCompletion(){
+  document.getElementById('q4').classList.remove('active');
+  const st=score>=5?3:score>=3?2:1;
+  const titles=['Bra forsøk! 💪','Godt jobba! 👍','Fantastisk! 🏆'];
+  const msgs=['Les gjennom teorien og prøv igjen!','Nesten perfekt! Se på feilene.','Du mestrer lys og optikk! Siste modul venter!'];
+  document.getElementById('comp-title').textContent=titles[st-1];
+  document.getElementById('comp-stars').textContent='⭐'.repeat(st)+'☆'.repeat(3-st);
+  document.getElementById('comp-score').innerHTML=score+' <span>/ 5</span>';
+  document.getElementById('comp-msg').textContent=msgs[st-1];
+  localStorage.setItem(`fl_m${MODULE_NUM}_stars`,st);
+  localStorage.setItem('fl_points',sessionPts);
+  const s=document.getElementById('completion');s.style.display='block';
+  s.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function retryQuiz(){
+  answers=new Array(5).fill(null);score=0;
+  questions.forEach((_,i)=>{
+    document.getElementById('dot'+i).className='qp-dot';
+    document.getElementById('exp'+i).style.display='none';
+    document.getElementById('next'+i).style.display='none';
+    document.getElementById('opts'+i).querySelectorAll('.option-btn').forEach(b=>{b.disabled=false;b.className='option-btn';});
+    document.getElementById('q'+i).classList.remove('active');
+  });
+  document.getElementById('q0').classList.add('active');
+  document.getElementById('completion').style.display='none';
+  document.getElementById('quiz').scrollIntoView({behavior:'smooth',block:'start'});
+}
+</script>
+</body>
+</html>

@@ -178,6 +178,7 @@
     .module-card.locked {
       opacity: 0.45;
       cursor: not-allowed;
+      pointer-events: none;
     }
     .module-card.done { border-color: rgba(6,214,160,0.4); }
 
@@ -251,41 +252,41 @@
       <div class="card-badge badge-start" id="badge-1">Start</div>
     </a>
 
-    <div class="module-card locked" id="card-2">
+    <a href="modul2/" class="module-card locked" id="card-2">
       <div class="card-icon">⚡</div>
       <div class="card-number">Modul 2</div>
       <div class="card-title">Energi</div>
       <div class="card-desc">Kinetisk og potensiell energi — hva er energi egentlig?</div>
-      <div class="card-stars">☆☆☆</div>
-      <div class="card-badge badge-locked">🔒 Låst</div>
-    </div>
+      <div class="card-stars" id="stars-2">☆☆☆</div>
+      <div class="card-badge badge-locked" id="badge-2">🔒 Låst</div>
+    </a>
 
-    <div class="module-card locked" id="card-3">
+    <a href="modul3/" class="module-card locked" id="card-3">
       <div class="card-icon">🔊</div>
       <div class="card-number">Modul 3</div>
       <div class="card-title">Bølger og Lyd</div>
       <div class="card-desc">Frekvens, amplitude og hvorfor vi kan høre musikk.</div>
-      <div class="card-stars">☆☆☆</div>
-      <div class="card-badge badge-locked">🔒 Låst</div>
-    </div>
+      <div class="card-stars" id="stars-3">☆☆☆</div>
+      <div class="card-badge badge-locked" id="badge-3">🔒 Låst</div>
+    </a>
 
-    <div class="module-card locked" id="card-4">
+    <a href="modul4/" class="module-card locked" id="card-4">
       <div class="card-icon">🌈</div>
       <div class="card-number">Modul 4</div>
       <div class="card-title">Lys og Optikk</div>
       <div class="card-desc">Refleksjon, brytning og hvorfor himmelen er blå.</div>
-      <div class="card-stars">☆☆☆</div>
-      <div class="card-badge badge-locked">🔒 Låst</div>
-    </div>
+      <div class="card-stars" id="stars-4">☆☆☆</div>
+      <div class="card-badge badge-locked" id="badge-4">🔒 Låst</div>
+    </a>
 
-    <div class="module-card locked" id="card-5">
+    <a href="modul5/" class="module-card locked" id="card-5">
       <div class="card-icon">💡</div>
       <div class="card-number">Modul 5</div>
       <div class="card-title">Elektrisitet</div>
       <div class="card-desc">Strøm, spenning og motstand — slik fungerer elektrisitet.</div>
-      <div class="card-stars">☆☆☆</div>
-      <div class="card-badge badge-locked">🔒 Låst</div>
-    </div>
+      <div class="card-stars" id="stars-5">☆☆☆</div>
+      <div class="card-badge badge-locked" id="badge-5">🔒 Låst</div>
+    </a>
 
   </div>
 </main>
@@ -321,9 +322,18 @@
         const stEl = document.getElementById(`stars-${i}`);
         if (stEl) stEl.textContent = '⭐'.repeat(st) + '☆'.repeat(3-st);
         const card = document.getElementById(`card-${i}`);
-        if (card) { card.classList.add('done'); }
+        if (card) { card.classList.add('done'); card.classList.remove('locked'); card.classList.add('open'); }
         const badge = document.getElementById(`badge-${i}`);
         if (badge) { badge.textContent = 'Fullført'; badge.className = 'card-badge badge-done'; }
+        // Unlock next module
+        if (i < 5) {
+          const next = document.getElementById(`card-${i+1}`);
+          if (next && next.classList.contains('locked')) {
+            next.classList.remove('locked'); next.classList.add('open');
+            const nb = document.getElementById(`badge-${i+1}`);
+            if (nb) { nb.textContent = 'Start'; nb.className = 'card-badge badge-start'; }
+          }
+        }
       }
     }
     document.getElementById('done-count').textContent = done;

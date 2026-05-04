@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modul 5: Elektrisitet – FysikkLab</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/modules.css">
+  <style>
+    /* Sparkle animation for completion */
+    @keyframes sparkle {
+      0%,100%{transform:scale(1);opacity:1}
+      50%{transform:scale(1.3);opacity:0.6}
+    }
+    .sparkle { animation: sparkle 0.8s ease infinite; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="hdr-top">
+    <a href="../" class="back-link">← Hjem</a>
+    <div class="hdr-title">Modul 5 · Elektrisitet</div>
+    <div class="hdr-pts">⭐ <span id="pts">0</span></div>
+  </div>
+  <div class="step-nav">
+    <button class="step-btn active" onclick="scrollTo('teori')">1 · Teori</button>
+    <button class="step-btn" onclick="scrollTo('simulering')">2 · Simulering</button>
+    <button class="step-btn" onclick="scrollTo('utforsk')">3 · Utforsk</button>
+    <button class="step-btn" onclick="scrollTo('quiz')">4 · Quiz</button>
+  </div>
+</header>
+
+<div class="page">
+
+  <!-- ============================================================ -->
+  <!-- TEORI                                                        -->
+  <!-- ============================================================ -->
+  <section class="section" id="teori">
+    <div class="section-tag tag-blue">📖 Teori</div>
+    <h2>Elektrisitet</h2>
+    <p class="lead">
+      Elektrisitet er bevegelsen av elektriske ladninger (elektroner) gjennom et materiale.
+      Det driver lys, datamaskiner, telefoner og alt annet elektrisk rundt deg!
+    </p>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>⚡ Elektrisk strøm (I)</h3>
+        <p>
+          Strøm er <strong>mengden elektrisk ladning</strong> som flyter gjennom et leder per sekund.
+          Tenk på det som vann i et rør: strøm er hvor mye vann som renner gjennom hvert sekund.
+          Enheten er <strong>Ampere (A)</strong>.
+        </p>
+      </div>
+      <div class="card">
+        <h3>🔋 Elektrisk spenning (U)</h3>
+        <p>
+          Spenning er «trykket» som driver strømmen gjennom kretsen — det er energien per
+          ladningsenhet. Enheten er <strong>Volt (V)</strong>. Et vanlig AA-batteri gir 1,5 V.
+          Et bilbatteri gir 12 V. Stikkontakten i veggen gir 230 V.
+        </p>
+      </div>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>🔌 Elektrisk motstand (R)</h3>
+        <p>
+          Motstanden forteller oss hvor vanskelig det er for strøm å flyte gjennom en komponent.
+          En glødepære har høy motstand (den varmes opp!). Kobberledninger har veldig lav motstand.
+          Enheten er <strong>Ohm (Ω)</strong>.
+        </p>
+      </div>
+      <div class="card">
+        <h3>💡 Elektrisk effekt (P)</h3>
+        <p>
+          Effekt er <strong>energi per sekund</strong> — altså hvor raskt elektrisk energi brukes.
+          En lyspære på 60 W bruker 60 joule energi hvert sekund.
+          Enheten er <strong>Watt (W)</strong>.
+          P = U × I
+        </p>
+      </div>
+    </div>
+
+    <div class="law-card">
+      <div class="law-number">Ohms lov</div>
+      <h3>Sammenhengen mellom spenning, motstand og strøm</h3>
+      <p>
+        Den viktigste loven i elektriske kretser. Ohms lov sier at spenningen over en komponent
+        er lik strømmen gjennom den multiplisert med motstanden.
+      </p>
+      <div class="formula-box" style="margin:1rem 0 0">
+        <div class="formula">U = R · I</div>
+        <div class="formula-explain">
+          <div class="fe-item"><span>U</span> = spenning (Volt, V)</div>
+          <div class="fe-item"><span>R</span> = motstand (Ohm, Ω)</div>
+          <div class="fe-item"><span>I</span> = strøm (Ampere, A)</div>
+        </div>
+      </div>
+      <div class="law-example">
+        🔦 En lykt har batteri med 9 V og en motstand på 3 Ω.
+        Strøm: I = U/R = 9/3 = <strong>3 A</strong>
+      </div>
+    </div>
+
+    <div class="diagram-row">
+      <div class="diagram-box">
+        <svg viewBox="0 0 220 150" xmlns="http://www.w3.org/2000/svg">
+          <!-- Simple circuit: battery + resistor + bulb -->
+          <!-- Wires -->
+          <line x1="40" y1="30" x2="180" y2="30" stroke="#ffd166" stroke-width="2.5"/>
+          <line x1="180" y1="30" x2="180" y2="120" stroke="#ffd166" stroke-width="2.5"/>
+          <line x1="40" y1="120" x2="80" y2="120" stroke="#ffd166" stroke-width="2.5"/>
+          <line x1="140" y1="120" x2="180" y2="120" stroke="#ffd166" stroke-width="2.5"/>
+          <line x1="40" y1="30" x2="40" y2="120" stroke="#ffd166" stroke-width="2.5"/>
+          <!-- Battery (left) -->
+          <line x1="40" y1="60" x2="40" y2="90" stroke="#ffd166" stroke-width="1"/>
+          <line x1="30" y1="65" x2="50" y2="65" stroke="#00b4d8" stroke-width="3"/>
+          <line x1="34" y1="75" x2="46" y2="75" stroke="#00b4d8" stroke-width="2"/>
+          <text x="53" y="68" fill="#00b4d8" font-size="9" font-weight="bold">+</text>
+          <text x="53" y="80" fill="#00b4d8" font-size="9">−</text>
+          <text x="4" y="85" fill="#90e0ef" font-size="8">Batteri</text>
+          <!-- Resistor (bottom) -->
+          <rect x="80" y="112" width="60" height="16" fill="#0a1520" stroke="#ff9632" stroke-width="2" rx="3"/>
+          <text x="100" y="124" fill="#ff9632" font-size="9" font-weight="bold">R = Ω</text>
+          <!-- Bulb (right, circle) -->
+          <circle cx="180" cy="75" r="16" fill="#1b2a3b" stroke="#ffd166" stroke-width="2"/>
+          <line x1="172" y1="81" x2="176" y2="69" stroke="rgba(255,209,102,0.6)" stroke-width="1.5"/>
+          <line x1="176" y1="69" x2="180" y2="75" stroke="rgba(255,209,102,0.6)" stroke-width="1.5"/>
+          <line x1="180" y1="75" x2="184" y2="69" stroke="rgba(255,209,102,0.6)" stroke-width="1.5"/>
+          <line x1="184" y1="69" x2="188" y2="81" stroke="rgba(255,209,102,0.6)" stroke-width="1.5"/>
+          <text x="168" y="105" fill="#ffd166" font-size="8">Lyspære</text>
+          <!-- Current arrow -->
+          <text x="80" y="20" fill="#06d6a0" font-size="9" font-weight="bold">I →</text>
+          <!-- Labels -->
+          <text x="40" y="145" fill="#90e0ef" font-size="8">U = R × I</text>
+        </svg>
+        <p>Enkel elektrisk krets med batteri, motstand og lyspære</p>
+      </div>
+      <div class="diagram-box">
+        <svg viewBox="0 0 220 150" xmlns="http://www.w3.org/2000/svg">
+          <!-- Ohm's law triangle -->
+          <polygon points="110,20 40,130 180,130" fill="rgba(0,180,216,0.08)" stroke="#00b4d8" stroke-width="2"/>
+          <!-- Dividing line -->
+          <line x1="40" y1="80" x2="180" y2="80" stroke="#00b4d8" stroke-width="1.5"/>
+          <!-- U top -->
+          <text x="110" y="65" text-anchor="middle" fill="#ffd166" font-size="22" font-weight="800">U</text>
+          <!-- R and I bottom -->
+          <text x="70" y="118" text-anchor="middle" fill="#ff9632" font-size="22" font-weight="800">R</text>
+          <text x="150" y="118" text-anchor="middle" fill="#06d6a0" font-size="22" font-weight="800">I</text>
+          <!-- Formulas -->
+          <text x="110" y="148" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">U=R·I  R=U/I  I=U/R</text>
+        </svg>
+        <p>Ohms lov-trekant: dekk til det ukjente for å finne formelen</p>
+      </div>
+    </div>
+
+    <div class="fact-banner">
+      <div class="icon">💡</div>
+      <div>
+        <strong>Visste du?</strong> Menneskekroppen leder elektrisitet! Det er derfor du kan få støt
+        av en stikkontakt. Hjertet ditt er egentlig en elektrisk pumpe — det er elektriske impulser
+        som får det til å slå. Sykehus bruker EKG-maskiner for å måle disse elektriske signalene. ❤️
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================ -->
+  <!-- SIMULERING                                                   -->
+  <!-- ============================================================ -->
+  <section class="section" id="simulering">
+    <div class="section-tag tag-green">🎮 Simulering</div>
+    <h2>Interaktiv elektrisk krets</h2>
+    <p class="lead">
+      Juster spenning og motstand og se hva som skjer med strømmen og lyspærens lysstyrke!
+      Mer strøm = kraftigere glødelampe.
+    </p>
+
+    <div class="sim-canvas-wrap">
+      <canvas id="sim-canvas" height="280"></canvas>
+    </div>
+    <div class="sim-controls">
+      <div class="slider-row">
+        <div class="slider-group">
+          <label>Spenning U <span id="sim-u-val">6 V</span></label>
+          <input type="range" id="sim-u" min="1" max="12" value="6" step="1">
+        </div>
+        <div class="slider-group">
+          <label>Motstand R <span id="sim-r-val">3 Ω</span></label>
+          <input type="range" id="sim-r" min="1" max="12" value="3" step="1">
+        </div>
+      </div>
+      <div class="sim-btn-row" style="justify-content:flex-start;gap:2rem">
+        <span id="sim-current" style="font-size:1.1rem;font-weight:800;color:var(--success)">I = 2.0 A</span>
+        <span id="sim-power" style="font-size:1.1rem;font-weight:800;color:var(--warning)">P = 12.0 W</span>
+      </div>
+    </div>
+
+    <div class="fact-banner" style="margin-top:1.4rem">
+      <div class="icon">🧪</div>
+      <div>
+        <strong>Prøv dette:</strong> Sett spenning til 12V og motstand til 1Ω — pæren lyser sterkt!
+        Hold spenningen konstant og øk motstanden — pæren dimmer.
+        Det er Ohms lov: I = U/R. Mer motstand = mindre strøm.
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================ -->
+  <!-- UTFORSK                                                      -->
+  <!-- ============================================================ -->
+  <section class="section" id="utforsk">
+    <div class="section-tag tag-yellow">🔭 Hva skjer hvis...?</div>
+    <h2>Utforsk Ohms lov</h2>
+    <p class="lead">Endre spenning og motstand og se strømmen beregnes automatisk med I = U/R.</p>
+
+    <div class="explorer-box">
+      <div class="explorer-sliders">
+        <div class="exp-slider">
+          <label>Spenning U <span class="val" id="exp-u-val">9 V</span></label>
+          <input type="range" id="exp-u" min="1" max="24" value="9" step="1">
+        </div>
+        <div class="exp-slider">
+          <label>Motstand R <span class="val" id="exp-r-val">3 Ω</span></label>
+          <input type="range" id="exp-r" min="1" max="20" value="3" step="1">
+        </div>
+      </div>
+      <div class="exp-result">
+        <div class="exp-formula-line" id="exp-formula">
+          I = U / R = <span class="hi">9</span> / <span class="hi">3</span> = <span class="hi">3.0</span> A
+        </div>
+        <div class="arrow-track">
+          <div class="arrow-fill" id="exp-arrow" style="width:25%"></div>
+        </div>
+        <div class="exp-context" id="exp-context">💡 3 ampere — nok til en sterk lyspære!</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================ -->
+  <!-- QUIZ                                                         -->
+  <!-- ============================================================ -->
+  <section class="section" id="quiz">
+    <div class="section-tag tag-pink">🎯 Quiz</div>
+    <h2>Test deg selv!</h2>
+    <p class="lead">5 spørsmål om elektrisitet. Husk Ohms lov: U = R × I!</p>
+    <div class="quiz-progress" id="quiz-dots"></div>
+
+    <div class="question-card active" id="q0">
+      <div class="q-number">Spørsmål 1 av 5</div>
+      <div class="q-text">Hva er Ohms lov?</div>
+      <div class="options" id="opts0"></div>
+      <div class="q-explanation" id="exp0">Ohms lov er <strong>U = R × I</strong>. Spenning (V) = Motstand (Ω) × Strøm (A). Den kan også skrives om til I = U/R eller R = U/I.</div>
+      <div class="q-nav"><button class="btn btn-primary" id="next0" style="display:none" onclick="nextQ(1)">Neste →</button></div>
+    </div>
+
+    <div class="question-card" id="q1">
+      <div class="q-number">Spørsmål 2 av 5</div>
+      <div class="q-text">En krets har spenning 9 V og motstand 3 Ω. Hva er strømmen?</div>
+      <div class="options" id="opts1"></div>
+      <div class="q-explanation" id="exp1">Bruk I = U/R = 9 V / 3 Ω = <strong>3 A</strong>. Husk: dele spenning på motstand for å finne strøm.</div>
+      <div class="q-nav"><button class="btn btn-primary" id="next1" style="display:none" onclick="nextQ(2)">Neste →</button></div>
+    </div>
+
+    <div class="question-card" id="q2">
+      <div class="q-number">Spørsmål 3 av 5</div>
+      <div class="q-text">Hva er enheten for elektrisk motstand?</div>
+      <div class="options" id="opts2"></div>
+      <div class="q-explanation" id="exp2">Elektrisk motstand måles i <strong>Ohm (Ω)</strong>, oppkalt etter den tyske fysikeren Georg Simon Ohm (1789–1854). Ω er den greske bokstaven Omega.</div>
+      <div class="q-nav"><button class="btn btn-primary" id="next2" style="display:none" onclick="nextQ(3)">Neste →</button></div>
+    </div>
+
+    <div class="question-card" id="q3">
+      <div class="q-number">Spørsmål 4 av 5</div>
+      <div class="q-text">Hva er enheten for elektrisk strøm?</div>
+      <div class="options" id="opts3"></div>
+      <div class="q-explanation" id="exp3">Elektrisk strøm måles i <strong>Ampere (A)</strong>, oppkalt etter André-Marie Ampère. Volt (V) er spenning, Watt (W) er effekt, og Ohm (Ω) er motstand.</div>
+      <div class="q-nav"><button class="btn btn-primary" id="next3" style="display:none" onclick="nextQ(4)">Neste →</button></div>
+    </div>
+
+    <div class="question-card" id="q4">
+      <div class="q-number">Spørsmål 5 av 5</div>
+      <div class="q-text">Du øker motstanden i en krets men holder spenningen konstant. Hva skjer med strømmen?</div>
+      <div class="options" id="opts4"></div>
+      <div class="q-explanation" id="exp4">Siden I = U/R, og U er konstant mens R øker, vil I <strong>minke</strong>. Mer motstand = trangere vei for elektronene = mindre strøm. Som å klemme til på en hageslange!</div>
+      <div class="q-nav"><button class="btn btn-primary" id="next4" style="display:none" onclick="showCompletion()">Se resultatet! 🎉</button></div>
+    </div>
+  </section>
+
+  <!-- COMPLETION -->
+  <section class="section" id="completion">
+    <div class="completion-box" id="comp-box">
+      <div style="font-size:3.5rem" id="comp-emoji">🏆</div>
+      <h2 id="comp-title">Du er en FysikkMester!</h2>
+      <div class="big-stars" id="comp-stars">☆☆☆</div>
+      <div class="score-display" id="comp-score">0 <span>/ 5</span></div>
+      <p id="comp-msg">Du har fullført Modul 5 og hele FysikkLab!</p>
+      <div id="total-pts-display" style="margin:1rem 0;font-size:1.1rem;color:var(--warning);font-weight:800"></div>
+      <div class="comp-btns">
+        <button class="btn btn-secondary" onclick="retryQuiz()">↺ Prøv igjen</button>
+        <a href="../" class="btn btn-primary">🏠 Tilbake til forsiden</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+const MODULE_NUM = 5;
+let sessionPts = +localStorage.getItem('fl_points') || 0;
+document.getElementById('pts').textContent = sessionPts;
+function addPts(n) { sessionPts += n; localStorage.setItem('fl_points', sessionPts); document.getElementById('pts').textContent = sessionPts; }
+function scrollTo(id) { document.getElementById(id).scrollIntoView({ behavior:'smooth', block:'start' }); }
+
+const stepSections=['teori','simulering','utforsk','quiz'];
+const stepBtns=document.querySelectorAll('.step-btn');
+window.addEventListener('scroll',()=>{
+  let cur=0;
+  stepSections.forEach((id,i)=>{const el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<120)cur=i;});
+  stepBtns.forEach((b,i)=>b.classList.toggle('active',i===cur));
+});
+
+/* ================================================================ */
+/* SIMULATION — Electric circuit with glowing bulb                  */
+/* ================================================================ */
+const canvas = document.getElementById('sim-canvas');
+const ctx    = canvas.getContext('2d');
+let dotOffset = 0;
+
+function resizeCanvas() { canvas.width = canvas.parentElement.clientWidth || 800; }
+resizeCanvas(); window.addEventListener('resize', () => { resizeCanvas(); drawCircuit(); });
+
+function drawCircuit() {
+  const U = +document.getElementById('sim-u').value;
+  const R = +document.getElementById('sim-r').value;
+  const I = U / R;
+  const P = U * I;
+  const brightness = Math.min(I / 12, 1);
+
+  document.getElementById('sim-current').textContent = `I = ${I.toFixed(1)} A`;
+  document.getElementById('sim-power').textContent   = `P = ${P.toFixed(1)} W`;
+
+  const W = canvas.width, H = canvas.height;
+  ctx.clearRect(0, 0, W, H);
+  ctx.fillStyle = '#0a1520'; ctx.fillRect(0, 0, W, H);
+
+  // Circuit layout
+  const left = Math.max(60, W*0.1);
+  const right = Math.min(W-60, W*0.9);
+  const top = 55, bot = H - 55;
+  const cx = (left+right)/2, cy = (top+bot)/2;
+  const bulbX = right, bulbY = cy;
+  const batX  = left,  batY  = cy;
+  const resY  = bot;
+
+  // Wire color based on current
+  const wireAlpha = 0.3 + brightness*0.5;
+  const wireColor = `rgba(255,209,102,${wireAlpha})`;
+
+  // Draw wires
+  function wire(x1,y1,x2,y2) {
+    ctx.strokeStyle=wireColor; ctx.lineWidth=3;
+    ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke();
+  }
+  wire(left, top, right, top);
+  wire(right, top, right, bulbY-20);
+  wire(right, bulbY+20, right, bot);
+  wire(right, bot, cx+40, bot);
+  wire(cx-40, bot, left, bot);
+  wire(left, bot, left, batY+28);
+  wire(left, batY-28, left, top);
+
+  // Animated current dots
+  function drawDots(x1,y1,x2,y2) {
+    const dx=x2-x1, dy=y2-y1, len=Math.hypot(dx,dy);
+    const nx=dx/len, ny=dy/len;
+    const dotSpacing=28;
+    const numDots=Math.floor(len/dotSpacing);
+    for(let i=0;i<numDots;i++){
+      const t=((i*dotSpacing+dotOffset*I*0.5)%len)/len;
+      const px=x1+t*dx, py=y1+t*dy;
+      ctx.beginPath(); ctx.arc(px,py,3,0,Math.PI*2);
+      ctx.fillStyle=`rgba(6,214,160,${0.5+brightness*0.5})`; ctx.fill();
+    }
+  }
+  drawDots(left,top,right,top);
+  drawDots(right,bot,left,bot);
+
+  // Battery
+  const bh=28;
+  ctx.strokeStyle='#00b4d8'; ctx.lineWidth=3;
+  ctx.beginPath(); ctx.moveTo(batX-bh/2,batY-10); ctx.lineTo(batX+bh/2,batY-10); ctx.stroke();
+  ctx.lineWidth=2;
+  ctx.beginPath(); ctx.moveTo(batX-bh*0.65/2,batY+5); ctx.lineTo(batX+bh*0.65/2,batY+5); ctx.stroke();
+  ctx.fillStyle='#00b4d8'; ctx.font='bold 11px Nunito';
+  ctx.fillText('+', batX+bh/2+4, batY-6);
+  ctx.fillText('−', batX+bh/2+4, batY+10);
+  ctx.fillStyle='#90e0ef'; ctx.font='bold 13px Nunito';
+  ctx.fillText(U+'V', batX-12, batY+30);
+  ctx.fillStyle='rgba(255,255,255,0.4)'; ctx.font='10px Nunito';
+  ctx.fillText('Batteri', batX-20, batY-38);
+
+  // Resistor (bottom center)
+  const rw=60, rh=18;
+  ctx.strokeStyle='#ff9632'; ctx.lineWidth=2;
+  ctx.strokeRect(cx-rw/2, resY-rh/2, rw, rh);
+  ctx.fillStyle='rgba(255,150,50,0.08)'; ctx.fillRect(cx-rw/2, resY-rh/2, rw, rh);
+  // Zigzag inside
+  ctx.strokeStyle='#ff9632'; ctx.lineWidth=1.5;
+  ctx.beginPath();
+  const zx=[cx-22,cx-14,cx-6,cx+2,cx+10,cx+18,cx+22];
+  const zy=[resY, resY-7, resY+7, resY-7, resY+7, resY-7, resY];
+  ctx.moveTo(zx[0],zy[0]);
+  zx.forEach((x,i)=>{ if(i>0) ctx.lineTo(x,zy[i]); });
+  ctx.stroke();
+  ctx.fillStyle='#ff9632'; ctx.font='bold 12px Nunito';
+  ctx.fillText(R+'Ω', cx-10, resY+36);
+  ctx.fillStyle='rgba(255,255,255,0.4)'; ctx.font='10px Nunito';
+  ctx.fillText('Motstand', cx-28, resY-20);
+
+  // Bulb glow
+  if (brightness > 0.05) {
+    const glowR = 30 + brightness * 60;
+    const glow = ctx.createRadialGradient(bulbX, bulbY, 0, bulbX, bulbY, glowR);
+    const alpha = brightness * 0.55;
+    glow.addColorStop(0, `rgba(255,220,50,${alpha})`);
+    glow.addColorStop(0.5, `rgba(255,180,30,${alpha*0.4})`);
+    glow.addColorStop(1, 'rgba(255,150,0,0)');
+    ctx.fillStyle = glow;
+    ctx.beginPath(); ctx.arc(bulbX, bulbY, glowR, 0, Math.PI*2); ctx.fill();
+  }
+
+  // Bulb circle
+  const bulbR=22;
+  const bulbFill = brightness>0.1
+    ? `rgba(255,${180+brightness*60},${Math.round(brightness*120)},${0.25+brightness*0.75})`
+    : '#1b2a3b';
+  ctx.beginPath(); ctx.arc(bulbX, bulbY, bulbR, 0, Math.PI*2);
+  ctx.fillStyle=bulbFill; ctx.fill();
+  ctx.strokeStyle='#ffd166'; ctx.lineWidth=2; ctx.stroke();
+
+  // Filament
+  const fc = brightness>0.1 ? `rgba(255,255,200,${brightness})` : '#333';
+  ctx.strokeStyle=fc; ctx.lineWidth=1.5;
+  ctx.beginPath();
+  ctx.moveTo(bulbX-9,bulbY+8);
+  ctx.lineTo(bulbX-4,bulbY);
+  ctx.lineTo(bulbX,bulbY+6);
+  ctx.lineTo(bulbX+4,bulbY-2);
+  ctx.lineTo(bulbX+9,bulbY+8);
+  ctx.stroke();
+
+  ctx.fillStyle='rgba(255,255,255,0.4)'; ctx.font='10px Nunito';
+  ctx.fillText('Lyspære', bulbX-24, bulbY-32);
+
+  // Ohm's law summary
+  ctx.fillStyle='rgba(255,255,255,0.6)'; ctx.font='bold 12px Nunito';
+  ctx.fillText(`I = U/R = ${U}/${R} = ${I.toFixed(1)} A`, W/2-80, H-12);
+
+  dotOffset++;
+  if (circuitAnimId) circuitAnimId = requestAnimationFrame(drawCircuit);
+}
+
+let circuitAnimId = requestAnimationFrame(drawCircuit);
+
+document.getElementById('sim-u').addEventListener('input', e=>{
+  document.getElementById('sim-u-val').textContent=e.target.value+' V';
+});
+document.getElementById('sim-r').addEventListener('input', e=>{
+  document.getElementById('sim-r-val').textContent=e.target.value+' Ω';
+});
+
+/* ================================================================ */
+/* EXPLORER                                                          */
+/* ================================================================ */
+function updateExplorer() {
+  const U=+document.getElementById('exp-u').value;
+  const R=+document.getElementById('exp-r').value;
+  const I=U/R;
+  document.getElementById('exp-u-val').textContent=U+' V';
+  document.getElementById('exp-r-val').textContent=R+' Ω';
+  document.getElementById('exp-formula').innerHTML=
+    `I = U / R = <span class="hi">${U}</span> / <span class="hi">${R}</span> = <span class="hi">${I.toFixed(1)}</span> A`;
+  document.getElementById('exp-arrow').style.width=Math.min(I/12*100,100)+'%';
+  let txt='';
+  if     (I<0.5)  txt='🔋 Veldig svak strøm — knapt nok til en LED';
+  else if(I<1)    txt='💡 Nok til en liten lyspære';
+  else if(I<3)    txt='💡 Nok til en vanlig lommelykt';
+  else if(I<6)    txt='⚡ Kraftig strøm — som i en varmepistol!';
+  else if(I<10)   txt='⚡⚡ Veldig kraftig — som i et elektrisk komfyrplatelement!';
+  else            txt='⚠️ Ekstrem strøm — farlig! Bruk alltid sikringer!';
+  document.getElementById('exp-context').textContent=txt;
+}
+document.getElementById('exp-u').addEventListener('input',updateExplorer);
+document.getElementById('exp-r').addEventListener('input',updateExplorer);
+updateExplorer();
+
+/* ================================================================ */
+/* QUIZ                                                              */
+/* ================================================================ */
+const questions=[
+  {opts:['F = m × a','E = mc²','U = R × I','P = m × g × h'],                                                      correct:2},
+  {opts:['27 A','1 A','6 A','3 A'],                                                                                 correct:3},
+  {opts:['Volt (V)','Ampere (A)','Watt (W)','Ohm (Ω)'],                                                            correct:3},
+  {opts:['Volt (V)','Watt (W)','Ampere (A)','Ohm (Ω)'],                                                            correct:2},
+  {opts:['Strømmen øker','Strømmen forblir den samme','Strømmen minker','Spenningen øker automatisk'],              correct:2}
+];
+
+let answers=new Array(5).fill(null),score=0;
+const dotsEl=document.getElementById('quiz-dots');
+questions.forEach((_,i)=>{const d=document.createElement('div');d.className='qp-dot';d.id='dot'+i;dotsEl.appendChild(d);});
+questions.forEach((q,qi)=>{
+  const c=document.getElementById('opts'+qi);
+  q.opts.forEach((txt,oi)=>{const b=document.createElement('button');b.className='option-btn';b.textContent=txt;b.addEventListener('click',()=>answerQ(qi,oi));c.appendChild(b);});
+});
+
+function answerQ(qi,chosen){
+  if(answers[qi]!==null)return;
+  answers[qi]=chosen;
+  const btns=document.getElementById('opts'+qi).querySelectorAll('.option-btn');
+  btns.forEach((b,i)=>{b.disabled=true;if(i===questions[qi].correct)b.classList.add('correct');if(i===chosen&&chosen!==questions[qi].correct)b.classList.add('wrong');});
+  const dot=document.getElementById('dot'+qi);dot.classList.add('answered');
+  if(chosen===questions[qi].correct){dot.classList.add('correct');score++;addPts(20);}else dot.classList.add('wrong');
+  document.getElementById('exp'+qi).style.display='block';
+  document.getElementById('next'+qi).style.display='inline-block';
+}
+
+function nextQ(qi){
+  document.getElementById('q'+(qi-1)).classList.remove('active');
+  document.getElementById('q'+qi).classList.add('active');
+  document.getElementById('q'+qi).scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function showCompletion(){
+  document.getElementById('q4').classList.remove('active');
+  const st=score>=5?3:score>=3?2:1;
+  const isAllDone = [1,2,3,4,5].every(i=>+localStorage.getItem(`fl_m${i}_stars`)||0>0);
+
+  if(st===3){
+    document.getElementById('comp-emoji').textContent='🏆';
+    document.getElementById('comp-title').textContent='Perfekt! Du er en FysikkMester!';
+  } else if(st===2){
+    document.getElementById('comp-emoji').textContent='🎉';
+    document.getElementById('comp-title').textContent='Godt jobba! Nesten perfekt!';
+  } else {
+    document.getElementById('comp-emoji').textContent='💪';
+    document.getElementById('comp-title').textContent='Bra forsøk! Prøv igjen!';
+  }
+
+  document.getElementById('comp-stars').textContent='⭐'.repeat(st)+'☆'.repeat(3-st);
+  document.getElementById('comp-score').innerHTML=score+' <span>/ 5</span>';
+
+  const msgs=['Les gjennom teorien og prøv igjen!','Nesten perfekt — du er nesten klar til å bygge egne kretser!','Du har fullført alle 5 moduler i FysikkLab! 🎊'];
+  document.getElementById('comp-msg').textContent=msgs[st-1];
+  document.getElementById('total-pts-display').textContent='Totale poeng: '+sessionPts+' ⭐';
+
+  localStorage.setItem(`fl_m${MODULE_NUM}_stars`,st);
+  localStorage.setItem('fl_points',sessionPts);
+
+  const s=document.getElementById('completion');s.style.display='block';
+  s.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function retryQuiz(){
+  answers=new Array(5).fill(null);score=0;
+  questions.forEach((_,i)=>{
+    document.getElementById('dot'+i).className='qp-dot';
+    document.getElementById('exp'+i).style.display='none';
+    document.getElementById('next'+i).style.display='none';
+    document.getElementById('opts'+i).querySelectorAll('.option-btn').forEach(b=>{b.disabled=false;b.className='option-btn';});
+    document.getElementById('q'+i).classList.remove('active');
+  });
+  document.getElementById('q0').classList.add('active');
+  document.getElementById('completion').style.display='none';
+  document.getElementById('quiz').scrollIntoView({behavior:'smooth',block:'start'});
+}
+</script>
+</body>
+</html>
