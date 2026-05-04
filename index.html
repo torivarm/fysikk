@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FysikkLab</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d1b2a;
+      --card: #1b2a3b;
+      --accent: #00b4d8;
+      --accent2: #90e0ef;
+      --success: #06d6a0;
+      --warning: #ffd166;
+      --text: #e8f4f8;
+      --muted: #7fa8c0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* --- Starfield --- */
+    #starfield {
+      position: fixed; inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .star {
+      position: absolute;
+      background: #fff;
+      border-radius: 50%;
+      animation: twinkle var(--dur, 3s) infinite var(--delay, 0s);
+    }
+    @keyframes twinkle {
+      0%,100% { opacity: 0.2; transform: scale(1); }
+      50%      { opacity: 1;   transform: scale(1.4); }
+    }
+
+    /* --- Header --- */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(13,27,42,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,180,216,0.2);
+      padding: 0.9rem 2rem;
+    }
+    .header-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.5rem;
+      color: var(--accent);
+      letter-spacing: 1px;
+    }
+    .logo span { color: var(--text); }
+    .points-badge {
+      background: rgba(0,180,216,0.15);
+      border: 1px solid rgba(0,180,216,0.35);
+      padding: 0.45rem 1.1rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: flex; align-items: center; gap: 6px;
+    }
+
+    /* --- Hero --- */
+    .hero {
+      text-align: center;
+      padding: 5rem 2rem 3.5rem;
+      position: relative; z-index: 1;
+      background: radial-gradient(ellipse at 50% 0%, rgba(0,180,216,0.12) 0%, transparent 65%);
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 6vw, 3.8rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent), var(--accent2), var(--success));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+
+    /* --- Main content --- */
+    main {
+      max-width: 1100px; margin: 0 auto;
+      padding: 1rem 2rem 4rem;
+      position: relative; z-index: 1;
+    }
+
+    /* --- Progress overview --- */
+    .progress-box {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 1.4rem 1.6rem;
+      margin-bottom: 2rem;
+    }
+    .progress-box h3 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+    .bar-bg {
+      background: rgba(255,255,255,0.07);
+      height: 14px; border-radius: 7px; overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--success));
+      border-radius: 7px;
+      transition: width 0.6s ease;
+    }
+    .bar-label {
+      text-align: right;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+    }
+
+    /* --- Section heading --- */
+    .section-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+    }
+
+    /* --- Module grid --- */
+    .modules-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.4rem;
+    }
+    .module-card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 18px;
+      padding: 1.6rem;
+      position: relative;
+      text-decoration: none;
+      color: var(--text);
+      display: block;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+    .module-card.open {
+      border-color: rgba(0,180,216,0.35);
+      cursor: pointer;
+    }
+    .module-card.open:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 48px rgba(0,180,216,0.18);
+    }
+    .module-card.open::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at top left, rgba(0,180,216,0.08), transparent 70%);
+      pointer-events: none;
+    }
+    .module-card.locked {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+    .module-card.done { border-color: rgba(6,214,160,0.4); }
+
+    .card-icon  { font-size: 2.8rem; margin-bottom: 0.8rem; }
+    .card-number {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent);
+      margin-bottom: 0.2rem;
+    }
+    .card-title { font-size: 1.25rem; font-weight: 800; margin-bottom: 0.4rem; }
+    .card-desc  { font-size: 0.9rem; color: var(--muted); line-height: 1.5; }
+    .card-stars { margin-top: 0.9rem; font-size: 1.2rem; letter-spacing: 3px; }
+
+    .card-badge {
+      position: absolute; top: 1.1rem; right: 1.1rem;
+      font-size: 0.68rem; font-weight: 800;
+      letter-spacing: 1px; text-transform: uppercase;
+      padding: 0.28rem 0.7rem; border-radius: 50px;
+    }
+    .badge-start  { background: var(--accent); color: var(--bg); }
+    .badge-done   { background: var(--success); color: #000; }
+    .badge-locked { background: rgba(255,255,255,0.1); color: var(--muted); }
+
+    /* --- Footer --- */
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      padding: 2rem;
+      position: relative; z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+<div id="starfield"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">⚛ Fysikk<span>Lab</span></div>
+    <div class="points-badge">⭐ <span id="pts">0</span> poeng</div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Velkommen til FysikkLab!</h1>
+  <p>Utforsk fysikkens verden gjennom interaktive simuleringer, morsomme eksperimenter og spennende quiz 🚀</p>
+</section>
+
+<main>
+  <div class="progress-box">
+    <h3>Din fremgang</h3>
+    <div class="bar-bg">
+      <div class="bar-fill" id="prog-bar" style="width:0%"></div>
+    </div>
+    <div class="bar-label"><span id="done-count">0</span> av 5 moduler fullført</div>
+  </div>
+
+  <p class="section-label">Velg en modul</p>
+
+  <div class="modules-grid">
+
+    <a href="modul1/" class="module-card open" id="card-1">
+      <div class="card-icon">🚀</div>
+      <div class="card-number">Modul 1</div>
+      <div class="card-title">Kraft og Bevegelse</div>
+      <div class="card-desc">Lær om krefter, masse og akselerasjon med Newtons lover.</div>
+      <div class="card-stars" id="stars-1">☆☆☆</div>
+      <div class="card-badge badge-start" id="badge-1">Start</div>
+    </a>
+
+    <div class="module-card locked" id="card-2">
+      <div class="card-icon">⚡</div>
+      <div class="card-number">Modul 2</div>
+      <div class="card-title">Energi</div>
+      <div class="card-desc">Kinetisk og potensiell energi — hva er energi egentlig?</div>
+      <div class="card-stars">☆☆☆</div>
+      <div class="card-badge badge-locked">🔒 Låst</div>
+    </div>
+
+    <div class="module-card locked" id="card-3">
+      <div class="card-icon">🔊</div>
+      <div class="card-number">Modul 3</div>
+      <div class="card-title">Bølger og Lyd</div>
+      <div class="card-desc">Frekvens, amplitude og hvorfor vi kan høre musikk.</div>
+      <div class="card-stars">☆☆☆</div>
+      <div class="card-badge badge-locked">🔒 Låst</div>
+    </div>
+
+    <div class="module-card locked" id="card-4">
+      <div class="card-icon">🌈</div>
+      <div class="card-number">Modul 4</div>
+      <div class="card-title">Lys og Optikk</div>
+      <div class="card-desc">Refleksjon, brytning og hvorfor himmelen er blå.</div>
+      <div class="card-stars">☆☆☆</div>
+      <div class="card-badge badge-locked">🔒 Låst</div>
+    </div>
+
+    <div class="module-card locked" id="card-5">
+      <div class="card-icon">💡</div>
+      <div class="card-number">Modul 5</div>
+      <div class="card-title">Elektrisitet</div>
+      <div class="card-desc">Strøm, spenning og motstand — slik fungerer elektrisitet.</div>
+      <div class="card-stars">☆☆☆</div>
+      <div class="card-badge badge-locked">🔒 Låst</div>
+    </div>
+
+  </div>
+</main>
+
+<footer>FysikkLab — Laget for nysgjerrige 🔭</footer>
+
+<script>
+  // Starfield
+  const sf = document.getElementById('starfield');
+  for (let i = 0; i < 90; i++) {
+    const s = document.createElement('div');
+    s.className = 'star';
+    const sz = Math.random() * 2.5 + 0.5;
+    s.style.cssText = `
+      width:${sz}px; height:${sz}px;
+      left:${Math.random()*100}%;
+      top:${Math.random()*100}%;
+      --dur:${2+Math.random()*4}s;
+      --delay:${Math.random()*4}s;
+    `;
+    sf.appendChild(s);
+  }
+
+  // Load progress
+  function loadProgress() {
+    const pts = +localStorage.getItem('fl_points') || 0;
+    document.getElementById('pts').textContent = pts;
+    let done = 0;
+    for (let i = 1; i <= 5; i++) {
+      const st = +localStorage.getItem(`fl_m${i}_stars`) || 0;
+      if (st > 0) {
+        done++;
+        const stEl = document.getElementById(`stars-${i}`);
+        if (stEl) stEl.textContent = '⭐'.repeat(st) + '☆'.repeat(3-st);
+        const card = document.getElementById(`card-${i}`);
+        if (card) { card.classList.add('done'); }
+        const badge = document.getElementById(`badge-${i}`);
+        if (badge) { badge.textContent = 'Fullført'; badge.className = 'card-badge badge-done'; }
+      }
+    }
+    document.getElementById('done-count').textContent = done;
+    document.getElementById('prog-bar').style.width = (done/5*100) + '%';
+  }
+
+  loadProgress();
+</script>
+</body>
+</html>
